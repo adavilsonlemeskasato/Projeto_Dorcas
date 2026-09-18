@@ -1,5 +1,11 @@
 const projects = window.DorcasProjects || [];
-const activities = [['Campanha de Cimento: ajude a construir nossa sede', 'Infraestrutura', '12/08/2026', 'A construção da nossa sede precisa de você.', 'A campanha reúne doações de cimento e materiais para viabilizar a construção da sede da Associação Projeto Social Dorcas. A nova estrutura permitirá ampliar os atendimentos e oferecer um espaço mais seguro para as atividades.'], ['Estatuto Social atualizado e aprovado em assembleia', 'Institucional', '28/11/2025', 'Conheça as atualizações do documento que orienta nossa atuação.', 'A atualização do Estatuto Social fortalece a organização institucional, registra responsabilidades e orienta a atuação da Associação em favor das famílias atendidas.'], ['🎉 Festa do Dia das Crianças', 'Evento', '03/08/2026', 'No dia 12 de outubro, vamos celebrar o Dia das Crianças com muita alegria, brincadeiras e diversão!', 'Preparemos uma tarde especial com atividades lúdicas, gincanas, brinquedos infláveis, pintura de rosto, apresentações artísticas e muito mais. O objetivo é proporcionar um dia inesquecível para as crianças da nossa comunidade, valorizando o direito de brincar, se divertir e ser feliz.📅 Data: 03 de outubro de 2026⏰ Horário: às 08h.📍 Local: [Nome do local/sede da ONG]👶 Público: Crianças de 0 a 12 anos acompanhadas de um responsávelContamos com a participação de todas as famílias! Venha celebrar conosco essa data tão especial.'], ['Dorcas completa 4 anos de atuação na comunidade', 'Institucional', '25/08/2026', 'Celebramos uma história construída com muitas mãos.', 'A celebração marca uma trajetória de compromisso com Santo Antônio de Leverger, construída com a participação de voluntários, parceiros, famílias e comunidade.'], ['Saiba quais serviços a Dorcas oferece à comunidade', 'Serviços', '01/07/2026', 'Conheça nossos projetos e formas de atendimento.', 'A atividade apresenta os serviços, projetos e formas de acolhimento oferecidos pela Dorcas, ajudando a comunidade a encontrar orientação e apoio.']];
+const activities = [
+  ['Campanha de Cimento: ajude a construir nossa sede', 'Infraestrutura', '12/08/2026', 'A construção da nossa sede precisa de você.', 'A campanha reúne doações de cimento e materiais para viabilizar a construção da sede da Associação Projeto Social Dorcas. A nova estrutura permitirá ampliar os atendimentos e oferecer um espaço mais seguro para as atividades.'], 
+  ['Estatuto Social atualizado e aprovado em assembleia', 'Institucional', '28/11/2025', 'Conheça as atualizações do documento que orienta nossa atuação.', 'A atualização do Estatuto Social fortalece a organização institucional, registra responsabilidades e orienta a atuação da Associação em favor das famílias atendidas.'], 
+  ['🎉 Festa do Dia das Crianças', 'Evento', '03/08/2026', 'No dia 12 de outubro, vamos celebrar o Dia das Crianças com muita alegria, brincadeiras e diversão!', 'Preparemos uma tarde especial com atividades lúdicas, gincanas, brinquedos infláveis, pintura de rosto, apresentações artísticas e muito mais. O objetivo é proporcionar um dia inesquecível para as crianças da nossa comunidade, valorizando o direito de brincar, se divertir e ser feliz.<br><br>📅 Data: 03 de outubro de 2026<br>⏰ Horário: às 08h<br>📍 Local: [Nome do local/sede da ONG]<br>👶 Público: Crianças de 0 a 12 anos acompanhadas de um responsável<br><br>Contamos com a participação de todas as famílias! Venha celebrar conosco essa data tão especial.'], 
+  ['Dorcas completa 4 anos de atuação na comunidade', 'Institucional', '25/08/2026', 'Celebramos uma história construída com muitas mãos.', 'A celebração marca uma trajetória de compromisso com Santo Antônio de Leverger, construída com a participação de voluntários, parceiros, famílias e comunidade.'], 
+  ['Saiba quais serviços a Dorcas oferece à comunidade', 'Serviços', '01/07/2026', 'Conheça nossos projetos e formas de atendimento.', 'A atividade apresenta os serviços, projetos e formas de acolhimento oferecidos pela Dorcas, ajudando a comunidade a encontrar orientação e apoio.']
+];
 const docs = [['Estatuto Social (2025)', '245 KB', '28/11/2025'], ['Ata de Assembleia — 28/11/2025', '180 KB', '28/11/2025'], ['Ata de Assembleia — 12/08/2026', '95 KB', '12/08/2026'], ['Ata de Fundação — 25/08/2022', '120 KB', '25/08/2022']];
 const team = [['Odenir Cardoso de Resende', 'Presidente', 'Responsável pela condução institucional e representação da Associação.'], ['A definir', 'Vice-Presidente', 'Em breve, esta informação será atualizada.'], ['A definir', 'Secretária', 'Em breve, esta informação será atualizada.'], ['A definir', 'Tesoureiro', 'Em breve, esta informação será atualizada.']];
 const initials = n => { const p = n.split(' '); return p.length > 1 ? (p[0][0] + p[p.length - 1][0]).toUpperCase() : p[0][0].toUpperCase() };
@@ -68,8 +74,8 @@ document.addEventListener('components:ready', () => {
       if (field.required && !field.value.trim()) message = 'Este campo é obrigatório.';
       else if (field.name === 'nome' && field.value.trim().length < 3) message = 'Informe ao menos 3 caracteres.';
       else if (field.name === 'endereco' && field.value.trim().length < 5) message = 'Informe um endereço válido.';
-      else if (field.type === 'email' && !/^\\S+@\\S+\\.\\S+$/.test(field.value)) message = 'Informe um e-mail válido.';
-      else if (field.name === 'telefone' && field.value.replace(/\\D/g, '').length < 10) message = 'Informe ao menos 10 dígitos.';
+      else if (field.type === 'email' && !/^\S+@\S+\.\S+$/.test(field.value)) message = 'Informe um e-mail válido.';
+      else if (field.name === 'telefone' && field.value.replace(/\D/g, '').length < 10) message = 'Informe ao menos 10 dígitos.';
       if (error) error.textContent = message;
       field.classList.toggle('invalid', Boolean(message));
       if (message && !firstInvalid) firstInvalid = field;
@@ -189,8 +195,8 @@ document.addEventListener('components:ready', () => {
       if (field.required && !field.value.trim()) message = 'Este campo é obrigatório.';
       else if (field.name === 'nome' && field.value.trim().length < 3) message = 'Informe ao menos 3 caracteres.';
       else if (field.name === 'endereco' && field.value.trim().length < 5) message = 'Informe um endereço válido.';
-      else if (field.type === 'email' && !/^\\S+@\\S+\\.\\S+$/.test(field.value)) message = 'Informe um e-mail válido.';
-      else if (field.name === 'telefone' && field.value.replace(/\\D/g, '').length < 10) message = 'Informe ao menos 10 dígitos.';
+      else if (field.type === 'email' && !/^\S+@\S+\.\S+$/.test(field.value)) message = 'Informe um e-mail válido.';
+      else if (field.name === 'telefone' && field.value.replace(/\D/g, '').length < 10) message = 'Informe ao menos 10 dígitos.';
       if (error) error.textContent = message;
       field.classList.toggle('invalid', Boolean(message));
       if (message && !firstInvalid) firstInvalid = field;
@@ -225,7 +231,7 @@ document.addEventListener('components:ready', () => {
       let message = '';
       if (field.required && !field.value.trim()) message = 'Este campo é obrigatório.';
       else if (field.name === 'nome' && field.value.trim().length < 3) message = 'Informe ao menos 3 caracteres.';
-      else if (field.type === 'email' && !/^\\S+@\\S+\\.\\S+$/.test(field.value)) message = 'Informe um e-mail válido.';
+      else if (field.type === 'email' && !/^\S+@\S+\.\S+$/.test(field.value)) message = 'Informe um e-mail válido.';
       else if (field.name === 'mensagem' && field.value.trim().length < 10) message = 'Escreva ao menos 10 caracteres.';
       if (error) error.textContent = message;
       field.classList.toggle('invalid', Boolean(message));

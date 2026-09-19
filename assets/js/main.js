@@ -1,30 +1,46 @@
 const projects = window.DorcasProjects || [];
 const activities = [
   [
-    'Campanha de Cimento: ajude a construir nossa sede', 
-    'Infraestrutura', 
-    '12/08/2026', 
-    'A construção da nossa sede precisa de você.', 
-    'A campanha reúne doações de cimento e materiais para viabilizar a construção da sede da Associação Projeto Social Dorcas. A nova estrutura permitirá ampliar os atendimentos e oferecer um espaço mais seguro para las atividades.',
+    'Natal: Celebração e Ação Solidária', 
+    'Evento', 
+    '25/12/2026', 
+    'O Natal na Dorcas é um momento de celebrar a esperança e proporcionar às crianças uma experiência cheia de carinho.', 
+    'A ação reuniu famílias, voluntários e parceiros em uma programação especial, com atividades, momentos de alegria e surpresas preparadas para as crianças. A celebração buscou transformar o Natal em uma lembrança afetiva, mostrando que pequenos gestos podem levar alegria e esperança a quem mais precisa.',
     '../assets/images/cimento.jpg' // <-- Foto do Card 1
   ], 
   [
-    'Estatuto Social atualizado e aprovado em assembleia', 
-    'Institucional', 
-    '28/11/2025', 
-    'Conheça as atualizações do documento que orienta nossa atuação.', 
-    'A atualização do Estatuto Social fortalece a organização institucional, registra responsabilidades e orienta a atuação da Associação em favor das famílias atendidas.',
+    'Páscoa: Entrega de Cestas e Ovos de Páscoa', 
+    'Evento', 
+    '12/04/2026', 
+    'A Páscoa foi celebrada com as crianças em um momento de aprendizado, partilha e alegria.', 
+    'A programação trouxe atividades relacionadas à data e uma mensagem sobre seu significado, aproximando as crianças dos valores de amor, esperança e renovação. Ao final, a celebração foi marcada pela partilha de alimentos e lembranças, tornando o encontro ainda mais especial.',
     '../assets/images/estatuto.jpg' // <-- Foto do Card 2
   ], 
   [
     '🎉 Festa do Dia das Crianças', 
     'Evento', 
     '03/08/2026', 
-    'No dia 12 de outubro, vamos celebrar o Dia das Crianças com muita alegria, brincadeiras e diversão!', 
-    'Preparemos uma tarde especial com atividades lúdicas, gincanas, brinquedos infláveis, pintura de rosto, apresentações artísticas e muito mais. O objetivo é proporcionar um dia inesquecível para as crianças da nossa comunidade, valorizando o direito de brincar, se divertir e ser feliz.<br><br>📅 Data: 03 de outubro de 2026<br>⏰ Horário: às 08h<br>📍 Local: [Nome do local/sede da ONG]<br>👶 Público: Crianças de 0 a 12 anos acompanhadas de um responsável<br><br>Contamos com a participação de todas as famílias! Venha celebrar conosco essa data tão especial.',
+    'No dia 03 de agosto, vamos celebrar o Dia das Crianças com muita alegria, brincadeiras e diversão!', 
+    'Preparemos uma tarde especial com atividades lúdicas, gincanas, brinquedos infláveis, pintura de rosto, apresentações artísticas e muito mais. O objetivo é proporcionar um dia inesquecível para as crianças da nossa comunidade, valorizando o direito de brincar, se divertir e ser feliz.<br><br>📅 Data: 03 de agosto de 2026<br>⏰ Horário: às 08h<br>📍 Local: [Nome do local/sede da ONG]<br>👶 Público: Crianças de 0 a 12 anos acompanhadas de um responsável<br><br>Contamos com a participação de todas as famílias! Venha celebrar conosco essa data tão especial.',
     '../assets/images/dia-das-criancas.jpg' // <-- Foto do Card 3
   ], 
+   [
+    'Dia das Mães: Celebração e Homenagem', 
+    'Eventos', 
+    '10/05/2026', 
+    'O Dia das Mães foi uma oportunidade de reconhecer e homenagear as mulheres que exercem um papel importante na vida de suas famílias. ', 
+    'A ação foi preparada com momentos de carinho e valorização, proporcionando às mães uma experiência dedicada especialmente a elas. Mais do que uma comemoração, o encontro representou uma forma de agradecer por todo cuidado, dedicação e amor presentes no cotidiano das famílias.',
+    '../assets/images/servicos.jpg' // <-- Foto do Card 5
+  ],
   [
+    'Dia dos Pais: Celebração e Homenagem', 
+    'Eventos', 
+    '08/08/2026', 
+    'A celebração do Dia dos Pais destacou a importância da presença e dos momentos compartilhados em família.', 
+    'A programação criou oportunidades para pais e filhos estarem juntos, participando de atividades e aproveitando um momento de descontração. A ação reforçou que o cuidado também está presente nas pequenas experiências vividas em família e no tempo dedicado uns aos outros.',
+    '../assets/images/servicos.jpg' // <-- Foto do Card 5
+  ],
+    [
     'Dorcas completa 4 anos de atuação na comunidade', 
     'Institucional', 
     '25/08/2026', 

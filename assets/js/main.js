@@ -22,12 +22,12 @@ const activities = [
     '03/08/2026',
     'No dia 03 de agosto, vamos celebrar o Dia das Crianças com muita alegria, brincadeiras e diversão!',
     'Preparemos uma tarde especial com atividades lúdicas, gincanas, brinquedos infláveis, pintura de rosto, apresentações artísticas e muito mais. O objetivo é proporcionar um dia inesquecível para as crianças da nossa comunidade, valorizando o direito de brincar, se divertir e ser feliz.<br><br>📅 Data: 03 de agosto de 2026<br>⏰ Horário: às 08h<br>📍 Local: [Nome do local/sede da ONG]<br>👶 Público: Crianças de 0 a 12 anos acompanhadas de um responsável<br><br>Contamos com a participação de todas as famílias! Venha celebrar conosco essa data tão especial.',
-    // 💡 AS 4 IMAGENS DO CARROSSEL EM FORMATO .JPEG:
+    // 💡 AS 4 IMAGENS DO CARROSSEL (Certifique-se de que os arquivos na pasta images/ tenham exatamente estes nomes sem espaços):
     [
-      '/Projeto_Dorcas/assets/images/Dia%20das%20criancas%2001.jpeg',
-      '/Projeto_Dorcas/assets/images/Dia%20das%20criancas%2002.jpeg',
-      '/Projeto_Dorcas/assets/images/Dia%20das%20criancas%2003.jpeg',
-      '/Projeto_Dorcas/assets/images/Dia%20das%20criancas%2004.jpeg'
+      '../assets/images/criancas-01.jpeg',
+      '../assets/images/criancas-02.jpeg',
+      '../assets/images/criancas-03.jpeg',
+      '../assets/images/criancas-04.jpeg'
     ]
   ],
   [

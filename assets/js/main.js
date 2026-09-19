@@ -1,60 +1,66 @@
 const projects = window.DorcasProjects || [];
 const activities = [
   [
-    'Natal: Celebração e Ação Solidária', 
-    'Evento', 
-    '25/12/2026', 
-    'O Natal na Dorcas é um momento de celebrar a esperança e proporcionar às crianças uma experiência cheia de carinho.', 
+    'Natal: Celebração e Ação Solidária',
+    'Evento',
+    '25/12/2026',
+    'O Natal na Dorcas é um momento de celebrar a esperança e proporcionar às crianças uma experiência cheia de carinho.',
     'A ação reuniu famílias, voluntários e parceiros em uma programação especial, com atividades, momentos de alegria e surpresas preparadas para as crianças. A celebração buscou transformar o Natal em uma lembrança afetiva, mostrando que pequenos gestos podem levar alegria e esperança a quem mais precisa.',
-    '../assets/images/cimento.jpg' // <-- Foto do Card 1
-  ], 
+    ['../assets/images/cimento.jpeg'] 
+  ],
   [
-    'Páscoa: Entrega de Cestas e Ovos de Páscoa', 
-    'Evento', 
-    '12/04/2026', 
-    'A Páscoa foi celebrada com as crianças em um momento de aprendizado, partilha e alegria.', 
+    'Páscoa: Entrega de Cestas e Ovos de Páscoa',
+    'Evento',
+    '12/04/2026',
+    'A Páscoa foi celebrada com as crianças em um momento de aprendizado, partilha e alegria.',
     'A programação trouxe atividades relacionadas à data e uma mensagem sobre seu significado, aproximando as crianças dos valores de amor, esperança e renovação. Ao final, a celebração foi marcada pela partilha de alimentos e lembranças, tornando o encontro ainda mais especial.',
-    '../assets/images/estatuto.jpg' // <-- Foto do Card 2
-  ], 
+    ['../assets/images/estatuto.jpeg'] 
+  ],
   [
-    '🎉 Festa do Dia das Crianças', 
-    'Evento', 
-    '03/08/2026', 
-    'No dia 03 de agosto, vamos celebrar o Dia das Crianças com muita alegria, brincadeiras e diversão!', 
+    '🎉 Festa do Dia das Crianças',
+    'Evento',
+    '03/08/2026',
+    'No dia 03 de agosto, vamos celebrar o Dia das Crianças com muita alegria, brincadeiras e diversão!',
     'Preparemos uma tarde especial com atividades lúdicas, gincanas, brinquedos infláveis, pintura de rosto, apresentações artísticas e muito mais. O objetivo é proporcionar um dia inesquecível para as crianças da nossa comunidade, valorizando o direito de brincar, se divertir e ser feliz.<br><br>📅 Data: 03 de agosto de 2026<br>⏰ Horário: às 08h<br>📍 Local: [Nome do local/sede da ONG]<br>👶 Público: Crianças de 0 a 12 anos acompanhadas de um responsável<br><br>Contamos com a participação de todas as famílias! Venha celebrar conosco essa data tão especial.',
-    '../assets/images/dia-das-criancas.jpg' // <-- Foto do Card 3
-  ], 
-   [
-    'Dia das Mães: Celebração e Homenagem', 
-    'Eventos', 
-    '10/05/2026', 
-    'O Dia das Mães foi uma oportunidade de reconhecer e homenagear as mulheres que exercem um papel importante na vida de suas famílias. ', 
-    'A ação foi preparada com momentos de carinho e valorização, proporcionando às mães uma experiência dedicada especialmente a elas. Mais do que uma comemoração, o encontro representou uma forma de agradecer por todo cuidado, dedicação e amor presentes no cotidiano das famílias.',
-    '../assets/images/servicos.jpg' // <-- Foto do Card 5
-  ],
-  [
-    'Dia dos Pais: Celebração e Homenagem', 
-    'Eventos', 
-    '08/08/2026', 
-    'A celebração do Dia dos Pais destacou a importância da presença e dos momentos compartilhados em família.', 
-    'A programação criou oportunidades para pais e filhos estarem juntos, participando de atividades e aproveitando um momento de descontração. A ação reforçou que o cuidado também está presente nas pequenas experiências vividas em família e no tempo dedicado uns aos outros.',
-    '../assets/images/servicos.jpg' // <-- Foto do Card 5
-  ],
+    // 💡 AS 4 IMAGENS DO CARROSSEL EM FORMATO .JPEG:
     [
-    'Dorcas completa 4 anos de atuação na comunidade', 
-    'Institucional', 
-    '25/08/2026', 
-    'Celebramos uma história construída com muitas mãos.', 
-    'A celebração marca uma trajetória de compromisso com Santo Antônio de Leverger, construída com a participação de voluntários, parceiros, famílias e comunidade.',
-    '../assets/images/aniversario.jpg' // <-- Foto do Card 4
-  ], 
+      '../assets/images/criancas-1.jpeg',
+      '../assets/images/criancas-2.jpeg',
+      '../assets/images/criancas-3.jpeg',
+      '../assets/images/criancas-4.jpeg'
+    ]
+  ],
   [
-    'Saiba quais serviços a Dorcas oferece à comunidade', 
-    'Serviços', 
-    '01/07/2026', 
-    'Conheça nossos projetos e formas de atendimento.', 
+    'Dia das Mães: Celebração e Homenagem',
+    'Eventos',
+    '10/05/2026',
+    'O Dia das Mães foi uma oportunidade de reconhecer e homenagear as mulheres que exercem um papel importante na vida de suas famílias. ',
+    'A ação foi preparada com momentos de carinho e valorização, proporcionando às mães uma experiência dedicada especialmente a elas. Mais do que uma comemoração, o encontro representou uma forma de agradecer por todo cuidado, dedicação e amor presentes no cotidiano das famílias.',
+    ['../assets/images/servicos.jpeg'] 
+  ],
+  [
+    'Dia dos Pais: Celebração e Homenagem',
+    'Eventos',
+    '08/08/2026',
+    'A celebração do Dia dos Pais destacou a importância da presença e dos momentos compartilhados em família.',
+    'A programação criou oportunidades para pais e filhos estarem juntos, participando de atividades e aproveitando um momento de descontração. A ação reforçou que o cuidado também está presente nas pequenas experiências vividas em família e no tempo dedicado uns aos outros.',
+    ['../assets/images/servicos.jpeg'] 
+  ],
+  [
+    'Dorcas completa 4 anos de atuação na comunidade',
+    'Institucional',
+    '25/08/2026',
+    'Celebramos uma história construída com muitas mãos.',
+    'A celebração marca uma trajetória de compromisso com Santo Antônio de Leverger, construída com a participação de voluntários, parceiros, famílias e comunidade.',
+    ['../assets/images/aniversario.jpeg'] 
+  ],
+  [
+    'Saiba quais serviços a Dorcas oferece à comunidade',
+    'Serviços',
+    '01/07/2026',
+    'Conheça nossos projetos e formas de atendimento.',
     'A atividade apresenta os serviços, projetos e formas de acolhimento oferecidos pela Dorcas, ajudando a comunidade a encontrar orientação e apoio.',
-    '../assets/images/servicos.jpg' // <-- Foto do Card 5
+    ['../assets/images/servicos.jpeg'] 
   ]
 ];
 
@@ -64,13 +70,13 @@ const initials = n => { const p = n.split(' '); return p.length > 1 ? (p[0][0] +
 
 function renderProjects() { const el = document.querySelector('#projects-grid'); if (!el) return; el.innerHTML = projects.map(p => `<article class="card"><img src="${p.image.replace('w=1200&h=680', 'w=600&h=340')}" alt="${p.title}"><div class="card-body"><span class="tag">${p.category}</span><span class="status ${p.color}">${p.status}</span><h3>${p.title}</h3><p>${p.short}</p><button type="button" class="text-link project-modal-trigger" data-project-id="${p.id}">Conheça o projeto →</button></div></article>`).join('') }
 
-// Função renderActivities atualizada para ler a imagem de cada item (${n[5]})
-function renderActivities() { 
-  const el = document.querySelector('#news-grid'); 
-  if (!el) return; 
-  el.innerHTML = activities.map(n => `
+// Função renderActivities para carregar o carrossel automático
+function renderActivities() {
+  const el = document.querySelector('#news-grid');
+  if (!el) return;
+  el.innerHTML = activities.map((n, index) => `
     <article class="card">
-      <img src="${n[5]}" alt="${n[0]}">
+      <img src="${n[5][0]}" alt="${n[0]}" id="card-img-${index}" data-images='${JSON.stringify(n[5])}' data-current="0">
       <div class="card-body">
         <div class="meta">
           <span class="tag">${n[1]}</span>
@@ -78,10 +84,10 @@ function renderActivities() {
         </div>
         <h3>${n[0]}</h3>
         <p>${n[3]}</p>
-        <button type="button" class="text-link activity-modal-trigger" data-activity-id="${activities.indexOf(n)}">Ver atividades →</button>
+        <button type="button" class="text-link activity-modal-trigger" data-activity-id="${index}">Ver atividades →</button>
       </div>
     </article>
-  `).join(''); 
+  `).join('');
 }
 
 function renderTeam() { const el = document.querySelector('#team-grid'); if (!el) return; el.innerHTML = team.map(m => `<article class="team"><div class="avatar">${initials(m[0])}</div><h3>${m[0]}</h3><span>${m[1]}</span><p>${m[2]}</p></article>`).join('') }
@@ -91,6 +97,22 @@ function setupForm(form, message) { if (!form) return; form.querySelectorAll('in
 
 document.addEventListener('components:ready', () => {
   renderProjects(); renderActivities(); renderTeam(); renderDocs();
+
+  // ⏱️ Troca de imagem automática a cada 1 segundo (1000ms)
+  setInterval(() => {
+    document.querySelectorAll('#news-grid .card img').forEach(img => {
+      try {
+        const images = JSON.parse(img.dataset.images);
+        if (images && images.length > 1) {
+          let current = parseInt(img.dataset.current || 0);
+          current = (current + 1) % images.length;
+          img.dataset.current = current;
+          img.src = images[current];
+        }
+      } catch (e) {}
+    });
+  }, 1000);
+
   const nav = document.querySelector('#main-nav'), hamb = document.querySelector('.hamb');
   if (nav && hamb) { hamb.addEventListener('click', () => { const open = nav.classList.toggle('aberto'); hamb.setAttribute('aria-expanded', String(open)) }); nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { nav.classList.remove('aberto'); hamb.setAttribute('aria-expanded', 'false') })) }
   const modal = document.querySelector('#pix-modal'); const closeModal = () => modal?.classList.remove('open');
@@ -121,47 +143,6 @@ document.addEventListener('components:ready', () => {
 });
 
 document.addEventListener('components:ready', () => {
-  const projectDialog = document.querySelector('#project-dialog');
-  const volunteerDialog = document.querySelector('#volunteer-dialog');
-  const openVolunteer = document.querySelector('[data-open-volunteer]');
-  if (!projectDialog || !volunteerDialog || !openVolunteer) return;
-  const closeVolunteerButtons = volunteerDialog.querySelectorAll('[data-close-volunteer]');
-  const closeVolunteer = () => volunteerDialog.close();
-  openVolunteer.addEventListener('click', () => {
-    projectDialog.close();
-    requestAnimationFrame(() => volunteerDialog.showModal());
-  });
-  closeVolunteerButtons.forEach(button => button.addEventListener('click', closeVolunteer));
-  volunteerDialog.addEventListener('click', event => {
-    if (event.target === volunteerDialog) closeVolunteer();
-  });
-  const form = volunteerDialog.querySelector('#volunteer-dialog-form');
-  form?.addEventListener('submit', event => {
-    event.preventDefault();
-    let valid = true;
-    let firstInvalid = null;
-    form.querySelectorAll('input, select').forEach(field => {
-      const error = field.parentElement.querySelector('.field-error');
-      let message = '';
-      if (field.required && !field.value.trim()) message = 'Este campo é obrigatório.';
-      else if (field.name === 'nome' && field.value.trim().length < 3) message = 'Informe ao menos 3 caracteres.';
-      else if (field.name === 'endereco' && field.value.trim().length < 5) message = 'Informe um endereço válido.';
-      else if (field.type === 'email' && !/^\S+@\S+\.\S+$/.test(field.value)) message = 'Informe um e-mail válido.';
-      else if (field.name === 'telefone' && field.value.replace(/\D/g, '').length < 10) message = 'Informe ao menos 10 dígitos.';
-      if (error) error.textContent = message;
-      field.classList.toggle('invalid', Boolean(message));
-      if (message && !firstInvalid) firstInvalid = field;
-      valid = valid && !message;
-    });
-    if (!valid) { firstInvalid?.focus(); return; }
-    const success = form.querySelector('.success');
-    success.hidden = false;
-    success.textContent = 'Sua inscrição foi registrada neste navegador. A equipe da Dorcas entrará em contato.';
-    form.reset();
-  });
-});
-
-document.addEventListener('components:ready', () => {
   const dialog = document.querySelector('#activity-dialog');
   const content = document.querySelector('#activity-dialog-content');
   if (!dialog || !content || !activities.length) return;
@@ -170,7 +151,8 @@ document.addEventListener('components:ready', () => {
     button.addEventListener('click', () => {
       const activity = activities[Number(button.dataset.activityId)];
       if (!activity) return;
-      content.innerHTML = `<div class="activity-dialog-meta"><span class="tag">${activity[1]}</span><time>${activity[2]}</time></div><h2 id="activity-dialog-title">${activity[0]}</h2><p class="activity-dialog-lead">${activity[3]}</p><h3>Sobre esta atividade</h3><p>${activity[4]}</p><h3>Participe e acompanhe</h3><p>As atividades da Dorcas são construídas com a participação da comunidade, voluntários e parceiros. Acompanhe nossas ações e ajude a fortalecer essa iniciativa.</p>`;
+      const modalImg = activity[5][0];
+      content.innerHTML = `<div class="activity-dialog-meta"><span class="tag">${activity[1]}</span><time>${activity[2]}</time></div><img class="project-dialog-image" src="${modalImg}" alt="${activity[0]}"><h2 id="activity-dialog-title">${activity[0]}</h2><p class="activity-dialog-lead">${activity[3]}</p><h3>Sobre esta atividade</h3><p>${activity[4]}</p><h3>Participe e acompanhe</h3><p>As atividades da Dorcas são construídas com a participação da comunidade, voluntários e parceiros. Acompanhe nossas ações e ajude a fortalecer essa iniciativa.</p>`;
       dialog.showModal();
     });
   });

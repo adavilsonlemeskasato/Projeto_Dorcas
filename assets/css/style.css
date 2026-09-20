@@ -1736,3 +1736,18 @@ main {
     background-color: red !important;
     transform: scale(1.05) !important;
 }
+
+/* Efeito hover suave para os cards de frentes de atuação */
+.section .container .cards.three > div,
+.section .container div[style*="grid"] > div,
+.section .container .axis {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.section .container .cards.three > div:hover,
+.section .container div[style*="grid"] > div:hover,
+.section .container .axis:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(45, 90, 27, 0.15);
+    border-color: var(--laranja);
+}

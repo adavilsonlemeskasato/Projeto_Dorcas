@@ -2715,3 +2715,34 @@ main {
         padding-top: 62px;
     }
 }
+/* Cabeçalho e navegação com a mesma aparência */
+header {
+    background: var(--creme);
+}
+
+/* Área da logo sem círculo branco */
+.header-logo-frame {
+    width: 64px;
+    height: 64px;
+    flex: 0 0 64px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+
+    background: var(--creme);
+    border: 0;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Imagem com o mesmo fundo do navbar */
+.header-logo {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    background: var(--creme);
+    object-fit: contain;
+    object-position: center;
+}

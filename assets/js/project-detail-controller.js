@@ -44,8 +44,13 @@ document.addEventListener('DOMContentLoaded', () => {
     form.reset();
   });
 });
-document.addEventListener("DOMContentLoaded", () => {
+
+  // Criação de contadores animados para a seção de estatísticas  
+
+document.addEventListener('components:ready', () => {
     const counters = document.querySelectorAll(".counter");
+    if (!counters.length) return;
+
     let animated = false;
 
     const runCounter = (counter) => {
@@ -53,8 +58,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const suffix = counter.getAttribute("data-suffix") || "";
         let count = 0;
         
-        // Velocidade da contagem (quanto menor o divisor, mais rápido)
-        const speed = target > 100 ? target / 30 : target / 15; 
+        // Define a velocidade com base no tamanho do número
+        const speed = target > 100 ? target / 30 : Math.max(target / 15, 1); 
 
         const updateCount = () => {
             count += speed;
@@ -62,7 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 counter.innerText = Math.ceil(count) + suffix;
                 setTimeout(updateCount, 30);
             } else {
-                counter.innerText = target + suffix; // Garante que para exatamente no valor correto
+                counter.innerText = target + suffix; // Para exatamente no valor final
             }
         };
 
@@ -74,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!statsSection) return;
 
         const sectionPosition = statsSection.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.2;
+        const screenPosition = window.innerHeight / 1.1;
 
         if (sectionPosition < screenPosition && !animated) {
             counters.forEach(counter => runCounter(counter));
@@ -83,5 +88,5 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     window.addEventListener("scroll", checkScroll);
-    checkScroll(); // Verifica caso a seção já carregue visível na tela
+    checkScroll(); // Verifica caso a seção já esteja visível ao carregar a página
 });

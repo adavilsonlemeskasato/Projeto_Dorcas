@@ -44,3 +44,44 @@ document.addEventListener('DOMContentLoaded', () => {
     form.reset();
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".counter");
+    let animated = false;
+
+    const runCounter = (counter) => {
+        const target = +counter.getAttribute("data-target");
+        const suffix = counter.getAttribute("data-suffix") || "";
+        let count = 0;
+        
+        // Velocidade da contagem (quanto menor o divisor, mais rápido)
+        const speed = target > 100 ? target / 30 : target / 15; 
+
+        const updateCount = () => {
+            count += speed;
+            if (count < target) {
+                counter.innerText = Math.ceil(count) + suffix;
+                setTimeout(updateCount, 30);
+            } else {
+                counter.innerText = target + suffix; // Garante que para exatamente no valor correto
+            }
+        };
+
+        updateCount();
+    };
+
+    const checkScroll = () => {
+        const statsSection = document.querySelector(".stats");
+        if (!statsSection) return;
+
+        const sectionPosition = statsSection.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+
+        if (sectionPosition < screenPosition && !animated) {
+            counters.forEach(counter => runCounter(counter));
+            animated = true;
+        }
+    };
+
+    window.addEventListener("scroll", checkScroll);
+    checkScroll(); // Verifica caso a seção já carregue visível na tela
+});

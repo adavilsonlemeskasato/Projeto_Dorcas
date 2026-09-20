@@ -1592,24 +1592,30 @@ main {
     line-height: 1.7;
     margin-bottom: 1rem;
 }
-/* Somente os cards da seção Nossos princípios */
+/* Seção: Nossos princípios */
 .principles-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1rem;
     margin-top: 1.5rem;
 }
 
+/* Cada card */
 .principles-grid > article {
     min-height: 120px;
     padding: 1rem;
     border: 1px solid #d8cec2;
     border-radius: 8px;
     background-color: #fffaf3;
-    transition: all 0.3s ease;
+    cursor: pointer;
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease,
+                background-color 0.3s ease;
 }
 
-/* Hover somente nos cards dos princípios */
+/* Efeito somente ao passar o mouse no card */
 .principles-grid > article:hover {
     transform: translateY(-6px);
     background-color: #ffffff;
@@ -1617,17 +1623,19 @@ main {
     box-shadow: 0 8px 18px rgba(199, 104, 46, 0.22);
 }
 
+/* Título dentro do card */
 .principles-grid > article h3 {
     margin: 0 0 0.5rem;
     color: #173d0b;
 }
 
+/* Texto dentro do card */
 .principles-grid > article p {
     margin: 0;
     line-height: 1.5;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
     .principles-grid {
         grid-template-columns: repeat(2, 1fr);
     }

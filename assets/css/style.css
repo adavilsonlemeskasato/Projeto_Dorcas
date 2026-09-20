@@ -111,19 +111,19 @@ header.scrolled {
     flex: 0 0 64px;
     border-radius: 50%;
     overflow: hidden;
-    background: #fff;
-    border: 2px solid #ffffffaa;
-    box-shadow: 0 4px 12px #00000018;
+    background: transparent; /* Alterado de #fff para transparente */
+    border: none; /* Remova a borda branca se preferir */
+    box-shadow: none;
 }
 
 .header-logo {
     display: block;
     width: 100%;
     height: 100%;
-    padding: 5px;
+    padding: 0;
     object-fit: contain;
     object-position: center;
-    background: #fff;
+    background: transparent; /* Alterado de #fff para transparente */
 }
 
 .header-brand-copy {

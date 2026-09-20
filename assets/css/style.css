@@ -1583,3 +1583,12 @@ main {
         height: 220px;
     }
 }
+ 
+/* ==========================================
+    PÁGINAS DE CONTEÚDO (INTRO, ARTIGOS, ETC)
+   ========================================== */
+.page-intro p {
+    text-align: justify;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}

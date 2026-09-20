@@ -1443,7 +1443,7 @@ main {
     .cards.four,
     .legal-grid,
     .principles-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 
     .page-intro,
@@ -1637,7 +1637,7 @@ main {
 
 @media (max-width: 900px) {
     .principles-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(4, 1fr);
     }
 }
 

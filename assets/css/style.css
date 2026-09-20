@@ -1593,21 +1593,55 @@ main {
     margin-bottom: 1rem;
 }
 
-.principles-grid article {
-    padding: 1.25rem;
-    border-radius: 12px;
-    background-color: #fffaf3;
-    border: 1px solid transparent;
-    transition: 
-        transform 0.3s ease,
-        box-shadow 0.3s ease,
-        background-color 0.3s ease,
-        border-color 0.3s ease;
+/* Área dos princípios */
+.principles-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+    margin-top: 2rem;
 }
 
+/* Cartões dos princípios */
+.principles-grid article {
+    padding: 1.25rem;
+    min-height: 150px;
+    border: 1px solid #d8cec2;
+    border-radius: 12px;
+    background-color: #fffaf3;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease,
+                background-color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
 .principles-grid article:hover {
-    transform: translateY(-6px);
+    transform: translateY(-8px);
     background-color: #ffffff;
     border-color: #c7682e;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 10px 22px rgba(199, 104, 46, 0.22);
+}
+
+/* Títulos */
+.principles-grid article h3 {
+    margin-top: 0;
+    margin-bottom: 0.7rem;
+    color: #173d0b;
+}
+
+/* Textos */
+.principles-grid article p {
+    margin: 0;
+    line-height: 1.6;
+}
+@media (max-width: 900px) {
+    .principles-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .principles-grid {
+        grid-template-columns: 1fr;
+    }
 }

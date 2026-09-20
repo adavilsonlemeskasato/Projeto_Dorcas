@@ -6,7 +6,7 @@ const activities = [
     '25/12/2026',
     'O Natal na Dorcas é um momento de celebrar a esperança e proporcionar às crianças uma experiência cheia de carinho.',
     'A ação reuniu famílias, voluntários e parceiros em uma programação especial, com atividades, momentos de alegria e surpresas preparadas para as crianças. A celebração buscou transformar o Natal em uma lembrança afetiva, mostrando que pequenos gestos podem levar alegria e esperança a quem mais precisa.',
-    ['../assets/images/Natal.jpeg'] 
+    ['../assets/images/Natal.jpeg']
   ],
   [
     'Páscoa: Entrega de Cestas e Ovos de Páscoa',
@@ -14,7 +14,7 @@ const activities = [
     '12/04/2026',
     'A Páscoa foi celebrada com as crianças em um momento de aprendizado, partilha e alegria.',
     'A programação trouxe atividades relacionadas à data e uma mensagem sobre seu significado, aproximando as crianças dos valores de amor, esperança e renovação. Ao final, a celebração foi marcada pela partilha de alimentos e lembranças, tornando o encontro ainda mais especial.',
-    ['../assets/images/Pascoa.jpeg'] 
+    ['../assets/images/Pascoa.jpeg']
   ],
   [
     '🎉 Festa do Dia das Crianças',
@@ -36,7 +36,7 @@ const activities = [
     '10/05/2026',
     'O Dia das Mães foi uma oportunidade de reconhecer e homenagear as mulheres que exercem um papel importante na vida de suas famílias. ',
     'A ação foi preparada com momentos de carinho e valorização, proporcionando às mães uma experiência dedicada especialmente a elas. Mais do que uma comemoração, o encontro representou uma forma de agradecer por todo cuidado, dedicação e amor presentes no cotidiano das famílias.',
-     [
+    [
       '../assets/images/maes-01.jpeg',
       '../assets/images/maes-02.jpeg',
 
@@ -48,7 +48,7 @@ const activities = [
     '08/08/2026',
     'A celebração do Dia dos Pais destacou a importância da presença e dos momentos compartilhados em família.',
     'A programação criou oportunidades para pais e filhos estarem juntos, participando de atividades e aproveitando um momento de descontração. A ação reforçou que o cuidado também está presente nas pequenas experiências vividas em família e no tempo dedicado uns aos outros.',
-    ['../assets/images/pais.jpeg'] 
+    ['../assets/images/pais.jpeg']
   ],
   [
     'Dorcas completa 4 anos de atuação na comunidade',
@@ -56,7 +56,7 @@ const activities = [
     '25/08/2026',
     'Celebramos uma história construída com muitas mãos.',
     'A celebração marca uma trajetória de compromisso com Santo Antônio de Leverger, construída com a participação de voluntários, parceiros, famílias e comunidade.',
-    ['../assets/images/aniversario.jpeg'] 
+    ['../assets/images/aniversario.jpeg']
   ],
   [
     'Saiba quais serviços a Dorcas oferece à comunidade',
@@ -64,7 +64,7 @@ const activities = [
     '01/07/2026',
     'Conheça nossos projetos e formas de atendimento.',
     'A atividade apresenta os serviços, projetos e formas de acolhimento oferecidos pela Dorcas, ajudando a comunidade a encontrar orientação e apoio.',
-    ['../assets/images/servicos.jpeg'] 
+    ['../assets/images/servicos.jpeg']
   ]
 ];
 
@@ -102,7 +102,7 @@ function setupForm(form, message) { if (!form) return; form.querySelectorAll('in
 document.addEventListener('components:ready', () => {
   renderProjects(); renderActivities(); renderTeam(); renderDocs();
 
-  // ⏱️ Troca de imagem automática a cada 1 segundo (1000ms)
+  // ⏱️ Troca de imagem automática a cada 4 segundos (4000ms)
   setInterval(() => {
     document.querySelectorAll('#news-grid .card img').forEach(img => {
       try {
@@ -113,9 +113,9 @@ document.addEventListener('components:ready', () => {
           img.dataset.current = current;
           img.src = images[current];
         }
-      } catch (e) {}
+      } catch (e) { }
     });
-  }, 1000);
+  }, 4000);
 
   const nav = document.querySelector('#main-nav'), hamb = document.querySelector('.hamb');
   if (nav && hamb) { hamb.addEventListener('click', () => { const open = nav.classList.toggle('aberto'); hamb.setAttribute('aria-expanded', String(open)) }); nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { nav.classList.remove('aberto'); hamb.setAttribute('aria-expanded', 'false') })) }

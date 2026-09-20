@@ -300,48 +300,49 @@ document.addEventListener('components:ready', () => {
   });
 });
 
- // Criação de contadores animados para a seção de estatísticas  
+// Criação de contadores animados para a seção de estatísticas  
 
-document.addEventListener('components:ready', () => {
+document.addEventListener("DOMContentLoaded", () => {
+  let animated = false;
+
+  const runCounters = () => {
     const counters = document.querySelectorAll(".counter");
-    if (!counters.length) return;
+    if (!counters.length || animated) return;
 
-    let animated = false;
+    const statsSection = document.querySelector(".stats");
+    if (!statsSection) return;
 
-    const runCounter = (counter) => {
+    const sectionPosition = statsSection.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight;
+
+    if (sectionPosition < screenPosition) {
+      animated = true; // Garante que a animação corre apenas uma vez
+
+      counters.forEach(counter => {
         const target = +counter.getAttribute("data-target");
         const suffix = counter.getAttribute("data-suffix") || "";
         let count = 0;
-        
-        // Define a velocidade com base no tamanho do número
-        const speed = target > 100 ? target / 30 : Math.max(target / 15, 1); 
+
+        // Define a velocidade da contagem
+        const speed = target > 100 ? target / 35 : Math.max(target / 15, 1);
 
         const updateCount = () => {
-            count += speed;
-            if (count < target) {
-                counter.innerText = Math.ceil(count) + suffix;
-                setTimeout(updateCount, 30);
-            } else {
-                counter.innerText = target + suffix; // Para exatamente no valor final
-            }
+          count += speed;
+          if (count < target) {
+            counter.innerText = Math.ceil(count) + suffix;
+            setTimeout(updateCount, 30);
+          } else {
+            counter.innerText = target + suffix; // Para exatamente no valor final
+          }
         };
 
         updateCount();
-    };
+      });
+    }
+  };
 
-    const checkScroll = () => {
-        const statsSection = document.querySelector(".stats");
-        if (!statsSection) return;
+  window.addEventListener("scroll", runCounters);
 
-        const sectionPosition = statsSection.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.1;
-
-        if (sectionPosition < screenPosition && !animated) {
-            counters.forEach(counter => runCounter(counter));
-            animated = true;
-        }
-    };
-
-    window.addEventListener("scroll", checkScroll);
-    checkScroll(); // Verifica caso a seção já esteja visível ao carregar a página
+  // Executa também após um pequeno intervalo para garantir caso a seção já esteja visível
+  setTimeout(runCounters, 500);
 });

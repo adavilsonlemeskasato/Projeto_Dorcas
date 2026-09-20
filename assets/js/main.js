@@ -6,7 +6,7 @@ const activities = [
     '25/12/2026',
     'O Natal na Dorcas é um momento de celebrar a esperança e proporcionar às crianças uma experiência cheia de carinho.',
     'A ação reuniu famílias, voluntários e parceiros em uma programação especial, com atividades, momentos de alegria e surpresas preparadas para as crianças. A celebração buscou transformar o Natal em uma lembrança afetiva, mostrando que pequenos gestos podem levar alegria e esperança a quem mais precisa.',
-    ['../assets/images/cimento.jpeg'] 
+    ['../assets/images/Natal.jpeg'] 
   ],
   [
     'Páscoa: Entrega de Cestas e Ovos de Páscoa',
@@ -14,7 +14,7 @@ const activities = [
     '12/04/2026',
     'A Páscoa foi celebrada com as crianças em um momento de aprendizado, partilha e alegria.',
     'A programação trouxe atividades relacionadas à data e uma mensagem sobre seu significado, aproximando as crianças dos valores de amor, esperança e renovação. Ao final, a celebração foi marcada pela partilha de alimentos e lembranças, tornando o encontro ainda mais especial.',
-    ['../assets/images/estatuto.jpeg'] 
+    ['../assets/images/Pascoa.jpeg'] 
   ],
   [
     '🎉 Festa do Dia das Crianças',
@@ -36,7 +36,11 @@ const activities = [
     '10/05/2026',
     'O Dia das Mães foi uma oportunidade de reconhecer e homenagear as mulheres que exercem um papel importante na vida de suas famílias. ',
     'A ação foi preparada com momentos de carinho e valorização, proporcionando às mães uma experiência dedicada especialmente a elas. Mais do que uma comemoração, o encontro representou uma forma de agradecer por todo cuidado, dedicação e amor presentes no cotidiano das famílias.',
-    ['../assets/images/servicos.jpeg'] 
+     [
+      '../assets/images/maes-01.jpeg',
+      '../assets/images/maes-02.jpeg',
+
+    ]
   ],
   [
     'Dia dos Pais: Celebração e Homenagem',
@@ -44,7 +48,7 @@ const activities = [
     '08/08/2026',
     'A celebração do Dia dos Pais destacou a importância da presença e dos momentos compartilhados em família.',
     'A programação criou oportunidades para pais e filhos estarem juntos, participando de atividades e aproveitando um momento de descontração. A ação reforçou que o cuidado também está presente nas pequenas experiências vividas em família e no tempo dedicado uns aos outros.',
-    ['../assets/images/servicos.jpeg'] 
+    ['../assets/images/pais.jpeg'] 
   ],
   [
     'Dorcas completa 4 anos de atuação na comunidade',

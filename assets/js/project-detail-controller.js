@@ -45,48 +45,4 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-  // Criação de contadores animados para a seção de estatísticas  
-
-document.addEventListener('components:ready', () => {
-    const counters = document.querySelectorAll(".counter");
-    if (!counters.length) return;
-
-    let animated = false;
-
-    const runCounter = (counter) => {
-        const target = +counter.getAttribute("data-target");
-        const suffix = counter.getAttribute("data-suffix") || "";
-        let count = 0;
-        
-        // Define a velocidade com base no tamanho do número
-        const speed = target > 100 ? target / 30 : Math.max(target / 15, 1); 
-
-        const updateCount = () => {
-            count += speed;
-            if (count < target) {
-                counter.innerText = Math.ceil(count) + suffix;
-                setTimeout(updateCount, 30);
-            } else {
-                counter.innerText = target + suffix; // Para exatamente no valor final
-            }
-        };
-
-        updateCount();
-    };
-
-    const checkScroll = () => {
-        const statsSection = document.querySelector(".stats");
-        if (!statsSection) return;
-
-        const sectionPosition = statsSection.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight / 1.1;
-
-        if (sectionPosition < screenPosition && !animated) {
-            counters.forEach(counter => runCounter(counter));
-            animated = true;
-        }
-    };
-
-    window.addEventListener("scroll", checkScroll);
-    checkScroll(); // Verifica caso a seção já esteja visível ao carregar a página
-});
+ 

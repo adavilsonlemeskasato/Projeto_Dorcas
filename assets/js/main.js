@@ -303,46 +303,45 @@ document.addEventListener('components:ready', () => {
 // Criação de contadores animados para a seção de estatísticas  
 
 document.addEventListener("DOMContentLoaded", () => {
-  let animated = false;
+    let animated = false;
 
-  const runCounters = () => {
-    const counters = document.querySelectorAll(".counter");
-    if (!counters.length || animated) return;
+    const runCounters = () => {
+        const counters = document.querySelectorAll(".counter");
+        if (!counters.length || animated) return;
 
-    const statsSection = document.querySelector(".stats");
-    if (!statsSection) return;
+        const statsSection = document.querySelector(".stats");
+        if (!statsSection) return;
 
-    const sectionPosition = statsSection.getBoundingClientRect().top;
-    const screenPosition = window.innerHeight;
+        const sectionPosition = statsSection.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight;
 
-    if (sectionPosition < screenPosition) {
-      animated = true; // Garante que a animação corre apenas uma vez
+        if (sectionPosition < screenPosition) {
+            animated = true; // Garante que a animação corre apenas uma vez
 
-      counters.forEach(counter => {
-        const target = +counter.getAttribute("data-target");
-        const suffix = counter.getAttribute("data-suffix") || "";
-        let count = 0;
+            counters.forEach(counter => {
+                const target = +counter.getAttribute("data-target");
+                const suffix = counter.getAttribute("data-suffix") || "";
+                let count = 0;
+                
+                // Incremento menor para ir subindo mais devagar
+                const increment = Math.max(target / 60, 0.5);
 
-        // Define a velocidade da contagem
-        const speed = target > 100 ? target / 35 : Math.max(target / 15, 1);
+                const updateCount = () => {
+                    count += increment;
+                    if (count < target) {
+                        counter.innerText = Math.ceil(count) + suffix;
+                        // Aumentámos para 60 milissegundos para ficar mais lento e visível
+                        setTimeout(updateCount, 60); 
+                    } else {
+                        counter.innerText = target + suffix; // Para exatamente no valor final
+                    }
+                };
 
-        const updateCount = () => {
-          count += speed;
-          if (count < target) {
-            counter.innerText = Math.ceil(count) + suffix;
-            setTimeout(updateCount, 30);
-          } else {
-            counter.innerText = target + suffix; // Para exatamente no valor final
-          }
-        };
+                updateCount();
+            });
+        }
+    };
 
-        updateCount();
-      });
-    }
-  };
-
-  window.addEventListener("scroll", runCounters);
-
-  // Executa também após um pequeno intervalo para garantir caso a seção já esteja visível
-  setTimeout(runCounters, 500);
+    window.addEventListener("scroll", runCounters);
+    setTimeout(runCounters, 500);
 });

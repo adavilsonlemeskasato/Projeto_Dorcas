@@ -102,7 +102,7 @@ function setupForm(form, message) { if (!form) return; form.querySelectorAll('in
 document.addEventListener('components:ready', () => {
   renderProjects(); renderActivities(); renderTeam(); renderDocs();
 
-  // ⏱️ Troca de imagem automática a cada 4 segundos (4000ms)
+  // ⏱️ Troca de imagem automática a cada 6 segundos (6000ms)
   setInterval(() => {
     document.querySelectorAll('#news-grid .card img').forEach(img => {
       try {
@@ -115,7 +115,7 @@ document.addEventListener('components:ready', () => {
         }
       } catch (e) { }
     });
-  }, 4000);
+  }, 6000);
 
   const nav = document.querySelector('#main-nav'), hamb = document.querySelector('.hamb');
   if (nav && hamb) { hamb.addEventListener('click', () => { const open = nav.classList.toggle('aberto'); hamb.setAttribute('aria-expanded', String(open)) }); nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { nav.classList.remove('aberto'); hamb.setAttribute('aria-expanded', 'false') })) }

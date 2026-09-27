@@ -84,6 +84,7 @@ const team = [
     'Leny Oliveira',
     'Secretária',
     'Responsável pelas atividades administrativas e pela organização documental da Associação.'
+    ['../assets/images/Secretaria_Dorcas.jpeg']
   ],
   [
     'A definir',

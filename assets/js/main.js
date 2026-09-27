@@ -132,7 +132,7 @@ function renderProjects() {
 
 function renderActivities() {
   const el = document.querySelector('#news-grid');
-  // Se não estiver na página de atividades, ele aborta a função sem dar erro
+  
   if (!el || typeof activities === 'undefined' || activities.length === 0) return;
 
   el.innerHTML = activities.map((activity, index) => {
@@ -140,11 +140,15 @@ function renderActivities() {
     const category = activity[1];
     const date = activity[2];
     const shortDesc = activity[3];
-    const img = activity[5][0];
+    
+    // activity[5] contém o array com todas as imagens da atividade
+    const imagensArray = activity[5]; 
+    const primeiraImg = imagensArray[0];
 
+    // O JSON.stringify transforma o array em texto para o HTML ler corretamente no data-images
     return `
       <article class="card">
-        <img src="${img}" alt="${title}">
+        <img src="${primeiraImg}" alt="${title}" data-images='${JSON.stringify(imagensArray)}' data-current="0">
         <div class="card-body">
           <div class="meta">
             <span class="tag">${category}</span>

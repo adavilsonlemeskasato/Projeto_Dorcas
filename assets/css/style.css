@@ -1900,3 +1900,25 @@ header nav .nav-help-button:hover {
         grid-template-columns: 1fr !important;
     }
 }
+
+.team-photo {
+    display: block;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    border: 0;
+    background: var(--verde-claro);
+}
+
+.team .avatar {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+}
+
+.team h3 {
+    margin-top: 16px;
+}

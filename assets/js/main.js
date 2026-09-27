@@ -101,23 +101,32 @@ function initials(n) {
 function renderProjects() { const el = document.querySelector('#projects-grid'); if (!el) return; el.innerHTML = projects.map(p => `<article class="card"><img src="${p.image.replace('w=1200&h=680', 'w=600&h=340')}" alt="${p.title}"><div class="card-body"><span class="tag">${p.category}</span><span class="status ${p.color}">${p.status}</span><h3>${p.title}</h3><p>${p.short}</p><button type="button" class="text-link project-modal-trigger" data-project-id="${p.id}">Conheça o projeto →</button></div></article>`).join('') }
 
 // Função renderActivities para carregar o carrossel automático
-function renderActivities() {
-  const el = document.querySelector('#news-grid');
-  if (!el) return;
-  el.innerHTML = activities.map((n, index) => `
-    <article class="card">
-      <img src="${n[5][0]}" alt="${n[0]}" id="card-img-${index}" data-images='${JSON.stringify(n[5])}' data-current="0">
-      <div class="card-body">
-        <div class="meta">
-          <span class="tag">${n[1]}</span>
-          <small>${n[2]}</small>
-        </div>
-        <h3>${n[0]}</h3>
-        <p>${n[3]}</p>
-        <button type="button" class="text-link activity-modal-trigger" data-activity-id="${index}">Ver atividades →</button>
-      </div>
-    </article>
-  `).join('');
+function renderTeam() {
+    const el = document.querySelector('#team-grid');
+    if (!el) return;
+
+    el.innerHTML = team.map(m => {
+        const imagem = m[3]
+            ? `<img
+                class="team-photo"
+                src="${m[3]}"
+                alt="Foto de ${m[0]}"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
+              >
+              <div class="avatar fallback-avatar" style="display:none;">
+                ${initials(m[0])}
+              </div>`
+            : `<div class="avatar">${initials(m[0])}</div>`;
+
+        return `
+            <article class="team">
+                ${imagem}
+                <h3>${m[0]}</h3>
+                <span>${m[1]}</span>
+                <p>${m[2]}</p>
+            </article>
+        `;
+    }).join('');
 }
 
 function renderTeam() { const el = document.querySelector('#team-grid'); if (!el) return; el.innerHTML = team.map(m => `<article class="team"><div class="avatar">${initials(m[0])}</div><h3>${m[0]}</h3><span>${m[1]}</span><p>${m[2]}</p></article>`).join('') }

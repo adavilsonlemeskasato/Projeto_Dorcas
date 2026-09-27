@@ -111,7 +111,10 @@ function initials(n) {
 
 function renderTeam() {
   const el = document.querySelector('#team-grid');
-  if (!el) return;
+
+  if (!el) {
+    return;
+  }
 
   el.innerHTML = team.map(member => {
     const nome = member[0];
@@ -120,8 +123,18 @@ function renderTeam() {
     const imagem = member[3];
 
     const avatar = imagem
-      ? `<img class="team-photo" src="${imagem}" alt="Foto de ${nome}">`
-      : `<div class="avatar">${initials(nome)}</div>`;
+      ? `
+        <img
+          class="team-photo"
+          src="${imagem}"
+          alt="Foto de ${nome}"
+        >
+      `
+      : `
+        <div class="avatar">
+          ${initials(nome)}
+        </div>
+      `;
 
     return `
       <article class="team">

@@ -139,8 +139,8 @@ function renderTeam() {
     return `
       <article class="team">
         ${avatar}
-        <h3>${nome}</h3>
-        <span>${cargo}</span>
+        <h3>${cargo}</h3>
+        <span>${nome}</span>
         <p>${descricao}</p>
       </article>
     `;

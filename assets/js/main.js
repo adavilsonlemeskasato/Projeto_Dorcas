@@ -109,6 +109,55 @@ function initials(n) {
     : p[0][0].toUpperCase();
 }
 
+function renderProjects() {
+  const el = document.querySelector('#projects-grid');
+  // Se não estiver na página de projetos, ele aborta a função sem dar erro
+  if (!el || typeof projects === 'undefined' || projects.length === 0) return;
+
+  el.innerHTML = projects.map(project => `
+    <article class="card">
+      <img src="${project.image}" alt="${project.title}">
+      <div class="card-body">
+        <div class="meta">
+          <span class="tag">${project.category}</span>
+          <span class="status ${project.color || ''}">${project.status}</span>
+        </div>
+        <h3>${project.title}</h3>
+        <p>${project.short}</p>
+        <button class="btn btn-outline-green project-modal-trigger" data-project-id="${project.id}">Saiba mais</button>
+      </div>
+    </article>
+  `).join('');
+}
+
+function renderActivities() {
+  const el = document.querySelector('#activities-grid');
+  // Se não estiver na página de atividades, ele aborta a função sem dar erro
+  if (!el || typeof activities === 'undefined' || activities.length === 0) return;
+
+  el.innerHTML = activities.map((activity, index) => {
+    const title = activity[0];
+    const category = activity[1];
+    const date = activity[2];
+    const shortDesc = activity[3];
+    const img = activity[5][0];
+
+    return `
+      <article class="card">
+        <img src="${img}" alt="${title}">
+        <div class="card-body">
+          <div class="meta">
+            <span class="tag">${category}</span>
+            <time>${date}</time>
+          </div>
+          <h3>${title}</h3>
+          <p>${shortDesc}</p>
+          <button class="btn btn-outline-green activity-modal-trigger" data-activity-id="${index}">Ver detalhes</button>
+        </div>
+      </article>
+    `;
+  }).join('');
+}
 function renderTeam() {
   const el = document.querySelector('#team-grid');
 
@@ -152,11 +201,11 @@ function validate(input) { let ok = true, msg = ''; if (input.required && !input
 function setupForm(form, message) { if (!form) return; form.querySelectorAll('input,select,textarea').forEach(i => i.addEventListener('blur', () => validate(i))); form.addEventListener('submit', e => { e.preventDefault(); const fields = [...form.querySelectorAll('input,select,textarea')]; const bad = fields.filter(i => !validate(i)); if (bad.length) { bad[0].focus(); return } message.hidden = false; message.textContent = 'Recebemos seus dados. Em uma versão estática, o envio precisa ser concluído por e-mail ou WhatsApp.'; form.reset() }) }
 
 document.addEventListener('components:ready', () => {
-  // Executa as funções apenas se elas estiverem definidas, evitando que erros quebrem a página inteira
-  if (typeof renderProjects === 'function') renderProjects();
-  if (typeof renderActivities === 'function') renderActivities();
-  if (typeof renderTeam === 'function') renderTeam();
-  if (typeof renderDocs === 'function') renderDocs();
+  // Usamos try/catch para isolar erros. Se um falhar, o próximo continua.
+  try { renderProjects(); } catch (e) { console.warn("Projetos ignorados nesta página"); }
+  try { renderActivities(); } catch (e) { console.warn("Atividades ignoradas nesta página"); }
+  try { renderTeam(); } catch (e) { console.warn("Equipe ignorada nesta página"); }
+  try { renderDocs(); } catch (e) { console.warn("Documentos ignorados nesta página"); }
 
   // ⏱️ Troca de imagem automática a cada 6 segundos (6000ms)
   setInterval(() => {
@@ -172,6 +221,8 @@ document.addEventListener('components:ready', () => {
       } catch (e) { }
     });
   }, 6000);
+
+  // ... (o restante do código continua igual)
 
   // ... (mantenha o restante do código do evento components:ready inalterado)
 

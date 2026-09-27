@@ -131,7 +131,7 @@ function renderProjects() {
 }
 
 function renderActivities() {
-  const el = document.querySelector('#activities-grid');
+  const el = document.querySelector('#news-grid');
   // Se não estiver na página de atividades, ele aborta a função sem dar erro
   if (!el || typeof activities === 'undefined' || activities.length === 0) return;
 

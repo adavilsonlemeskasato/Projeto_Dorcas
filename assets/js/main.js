@@ -77,26 +77,26 @@ const docs = [
 
 const team = [
   [
-    'Odenir Cardoso de Resende',
     'Presidente',
+    'Odenir Cardoso de Resende',
     'Responsável pela condução institucional e representação da Associação.',
     null
   ],
   [
-    'A definir',
     'Vice-Presidente',
+    'A definir',
     'Em breve, esta informação será atualizada.',
     null
   ],
   [
-    'Leny Oliveira',
     'Secretária',
+    'Leny Oliveira',
     'Responsável pelas atividades administrativas e pela organização documental da Associação.',
     '../assets/images/Secretaria_Dorcas.jpeg'
   ],
   [
-    'A definir',
     'Tesoureiro',
+    'A definir',
     'Em breve, esta informação será atualizada.',
     null
   ]

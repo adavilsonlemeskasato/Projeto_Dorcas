@@ -68,6 +68,7 @@ const activities = [
   ]
 ];
 
+const docs = [['Estatuto Social (2025)', '245 KB', '28/11/2025'], ['Ata de Assembleia — 28/11/2025', '180 KB', '28/11/2025'], ['Ata de Assembleia — 12/08/2026', '95 KB', '12/08/2026'], ['Ata de Fundação — 25/08/2022', '120 KB', '25/08/2022']];
 const team = [
   [
     'Odenir Cardoso de Resende',
@@ -83,7 +84,6 @@ const team = [
     'Leny Oliveira',
     'Secretária',
     'Responsável pelas atividades administrativas e pela organização documental da Associação.'
-    ['../assets/images/Secretaria_Dorcas.jpeg']
   ],
   [
     'A definir',
@@ -91,8 +91,12 @@ const team = [
     'Em breve, esta informação será atualizada.'
   ]
 ];
-const initials = n => { const p = n.split(' '); return p.length > 1 ? (p[0][0] + p[p.length - 1][0]).toUpperCase() : p[0][0].toUpperCase() };
-
+function initials(n) {
+  const p = n.split(' ');
+  return p.length > 1
+    ? (p[0][0] + p[p.length - 1][0]).toUpperCase()
+    : p[0][0].toUpperCase();
+}
 function renderProjects() { const el = document.querySelector('#projects-grid'); if (!el) return; el.innerHTML = projects.map(p => `<article class="card"><img src="${p.image.replace('w=1200&h=680', 'w=600&h=340')}" alt="${p.title}"><div class="card-body"><span class="tag">${p.category}</span><span class="status ${p.color}">${p.status}</span><h3>${p.title}</h3><p>${p.short}</p><button type="button" class="text-link project-modal-trigger" data-project-id="${p.id}">Conheça o projeto →</button></div></article>`).join('') }
 
 // Função renderActivities para carregar o carrossel automático

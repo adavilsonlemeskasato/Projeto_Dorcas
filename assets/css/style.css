@@ -149,18 +149,24 @@ header.scrolled {
 /* Remove a moldura cinzenta e o fundo do botão Como Ajudar no menu para ficar igual aos outros */
 header nav .nav-help-button,
 header nav button[data-open-help] {
-    border: none !important;
-    background: transparent !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-    font: inherit !important;
-    color: inherit !important;
+    display: block;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+    color: inherit;
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.6;
+    text-align: left;
     cursor: pointer;
+    margin: 0;
+    padding: 0;
 }
 
 header nav .nav-help-button:hover,
 header nav button[data-open-help]:hover {
-    color: var(--laranja) !important;
+    color: var(--laranja);
 }
 
 nav {

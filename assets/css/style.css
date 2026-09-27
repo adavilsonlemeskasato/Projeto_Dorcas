@@ -106,11 +106,11 @@ header.scrolled {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 64px;
+    width:  180px;
     height: 64px;
-    flex: 0 0 64px;
+    flex: 0 0  180px;
     border-radius: 50%;
-    overflow: hidden;
+    overflow: visible;
     background: transparent; /* Alterado de #fff para transparente */
     border: none; /* Remova a borda branca se preferir */
     box-shadow: none;

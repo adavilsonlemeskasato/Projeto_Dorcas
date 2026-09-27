@@ -68,8 +68,29 @@ const activities = [
   ]
 ];
 
-const docs = [['Estatuto Social (2025)', '245 KB', '28/11/2025'], ['Ata de Assembleia — 28/11/2025', '180 KB', '28/11/2025'], ['Ata de Assembleia — 12/08/2026', '95 KB', '12/08/2026'], ['Ata de Fundação — 25/08/2022', '120 KB', '25/08/2022']];
-const team = [['Odenir Cardoso de Resende', 'Presidente', 'Responsável pela condução institucional e representação da Associação.'], ['A definir', 'Vice-Presidente', 'Em breve, esta informação será atualizada.'], ['A definir', 'Secretária', 'Em breve, esta informação será atualizada.'], ['A definir', 'Tesoureiro', 'Em breve, esta informação será atualizada.']];
+const team = [
+  [
+    'Odenir Cardoso de Resende',
+    'Presidente',
+    'Responsável pela condução institucional e representação da Associação.'
+  ],
+  [
+    'A definir',
+    'Vice-Presidente',
+    'Em breve, esta informação será atualizada.'
+  ],
+  [
+    'Leny Oliveira',
+    'Secretária',
+    'Responsável pelas atividades administrativas e pela organização documental da Associação.'
+    ['../assets/images/Secretaria_Dorcas.jpeg']
+  ],
+  [
+    'A definir',
+    'Tesoureiro',
+    'Em breve, esta informação será atualizada.'
+  ]
+];
 const initials = n => { const p = n.split(' '); return p.length > 1 ? (p[0][0] + p[p.length - 1][0]).toUpperCase() : p[0][0].toUpperCase() };
 
 function renderProjects() { const el = document.querySelector('#projects-grid'); if (!el) return; el.innerHTML = projects.map(p => `<article class="card"><img src="${p.image.replace('w=1200&h=680', 'w=600&h=340')}" alt="${p.title}"><div class="card-body"><span class="tag">${p.category}</span><span class="status ${p.color}">${p.status}</span><h3>${p.title}</h3><p>${p.short}</p><button type="button" class="text-link project-modal-trigger" data-project-id="${p.id}">Conheça o projeto →</button></div></article>`).join('') }
@@ -303,45 +324,45 @@ document.addEventListener('components:ready', () => {
 // Criação de contadores animados para a seção de estatísticas  
 
 document.addEventListener("DOMContentLoaded", () => {
-    let animated = false;
+  let animated = false;
 
-    const runCounters = () => {
-        const counters = document.querySelectorAll(".counter");
-        if (!counters.length || animated) return;
+  const runCounters = () => {
+    const counters = document.querySelectorAll(".counter");
+    if (!counters.length || animated) return;
 
-        const statsSection = document.querySelector(".stats");
-        if (!statsSection) return;
+    const statsSection = document.querySelector(".stats");
+    if (!statsSection) return;
 
-        const sectionPosition = statsSection.getBoundingClientRect().top;
-        const screenPosition = window.innerHeight;
+    const sectionPosition = statsSection.getBoundingClientRect().top;
+    const screenPosition = window.innerHeight;
 
-        if (sectionPosition < screenPosition) {
-            animated = true; // Garante que a animação corre apenas uma vez
+    if (sectionPosition < screenPosition) {
+      animated = true; // Garante que a animação corre apenas uma vez
 
-            counters.forEach(counter => {
-                const target = +counter.getAttribute("data-target");
-                const suffix = counter.getAttribute("data-suffix") || "";
-                let count = 0;
-                
-                // Incremento menor para ir subindo mais devagar
-                const increment = Math.max(target / 60, 0.5);
+      counters.forEach(counter => {
+        const target = +counter.getAttribute("data-target");
+        const suffix = counter.getAttribute("data-suffix") || "";
+        let count = 0;
 
-                const updateCount = () => {
-                    count += increment;
-                    if (count < target) {
-                        counter.innerText = Math.ceil(count) + suffix;
-                        // Aumentámos para 60 milissegundos para ficar mais lento e visível
-                        setTimeout(updateCount, 60); 
-                    } else {
-                        counter.innerText = target + suffix; // Para exatamente no valor final
-                    }
-                };
+        // Incremento menor para ir subindo mais devagar
+        const increment = Math.max(target / 60, 0.5);
 
-                updateCount();
-            });
-        }
-    };
+        const updateCount = () => {
+          count += increment;
+          if (count < target) {
+            counter.innerText = Math.ceil(count) + suffix;
+            // Aumentámos para 60 milissegundos para ficar mais lento e visível
+            setTimeout(updateCount, 60);
+          } else {
+            counter.innerText = target + suffix; // Para exatamente no valor final
+          }
+        };
 
-    window.addEventListener("scroll", runCounters);
-    setTimeout(runCounters, 500);
+        updateCount();
+      });
+    }
+  };
+
+  window.addEventListener("scroll", runCounters);
+  setTimeout(runCounters, 500);
 });

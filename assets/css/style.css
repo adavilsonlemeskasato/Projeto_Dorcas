@@ -107,24 +107,22 @@ header.scrolled {
     display: flex;
     align-items: center;
     justify-content: center;
-    width:  180px;
+    width: 130px;
     height: 64px;
-    flex: 0 0  180px;
-    border-radius: 50%;
+    flex: 0 0 130px;
     overflow: visible;
-    background: transparent; /* Alterado de #fff para transparente */
-    border: none; /* Remova a borda branca se preferir */
+    background: transparent;
+    border: none;
     box-shadow: none;
 }
 
 .header-logo {
     display: block;
-    width: 100%;
-    height: 100%;
-    padding: 0;
+    width: 130px;
+    height: 64px;
     object-fit: contain;
     object-position: center;
-    background: transparent; /* Alterado de #fff para transparente */
+    background: transparent;
 }
 
 .header-brand-copy {

@@ -117,8 +117,8 @@ function renderTeam() {
   }
 
   el.innerHTML = team.map(member => {
-    const nome = member[0];
-    const cargo = member[1];
+    const cargo = member[0];
+    const nome = member[1];
     const descricao = member[2];
     const imagem = member[3];
 

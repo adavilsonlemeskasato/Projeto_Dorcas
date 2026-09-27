@@ -1902,15 +1902,14 @@ header nav .nav-help-button:hover {
 }
 
 .team-photo {
-    display: block;
-    width: 70px;
-    height: 70px;
-    margin: 0 auto;
-    border-radius: 50%;
-    object-fit: cover;
-    object-position: center;
-    border: 0;
-    background: var(--verde-claro);
+  display: block;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  background: var(--verde-claro);
 }
 
 .team .avatar {

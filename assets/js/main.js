@@ -68,68 +68,72 @@ const activities = [
   ]
 ];
 
-const docs = [['Estatuto Social (2025)', '245 KB', '28/11/2025'], ['Ata de Assembleia — 28/11/2025', '180 KB', '28/11/2025'], ['Ata de Assembleia — 12/08/2026', '95 KB', '12/08/2026'], ['Ata de Fundação — 25/08/2022', '120 KB', '25/08/2022']];
+const docs = [
+  ['Estatuto Social (2025)', '245 KB', '28/11/2025'],
+  ['Ata de Assembleia — 28/11/2025', '180 KB', '28/11/2025'],
+  ['Ata de Assembleia — 12/08/2026', '95 KB', '12/08/2026'],
+  ['Ata de Fundação — 25/08/2022', '120 KB', '25/08/2022']
+];
+
 const team = [
   [
     'Odenir Cardoso de Resende',
     'Presidente',
-    'Responsável pela condução institucional e representação da Associação.'
+    'Responsável pela condução institucional e representação da Associação.',
+    null
   ],
   [
     'A definir',
     'Vice-Presidente',
-    'Em breve, esta informação será atualizada.'
+    'Em breve, esta informação será atualizada.',
+    null
   ],
   [
     'Leny Oliveira',
     'Secretária',
-    'Responsável pelas atividades administrativas e pela organização documental da Associação.'
-    ['../assets/images/Secretaria_Dorcas.jpeg']
+    'Responsável pelas atividades administrativas e pela organização documental da Associação.',
+    '../assets/images/Secretaria_Dorcas.jpeg'
   ],
   [
     'A definir',
     'Tesoureiro',
-    'Em breve, esta informação será atualizada.'
+    'Em breve, esta informação será atualizada.',
+    null
   ]
 ];
+
 function initials(n) {
   const p = n.split(' ');
   return p.length > 1
     ? (p[0][0] + p[p.length - 1][0]).toUpperCase()
     : p[0][0].toUpperCase();
 }
-function renderProjects() { const el = document.querySelector('#projects-grid'); if (!el) return; el.innerHTML = projects.map(p => `<article class="card"><img src="${p.image.replace('w=1200&h=680', 'w=600&h=340')}" alt="${p.title}"><div class="card-body"><span class="tag">${p.category}</span><span class="status ${p.color}">${p.status}</span><h3>${p.title}</h3><p>${p.short}</p><button type="button" class="text-link project-modal-trigger" data-project-id="${p.id}">Conheça o projeto →</button></div></article>`).join('') }
 
-// Função renderActivities para carregar o carrossel automático
 function renderTeam() {
-    const el = document.querySelector('#team-grid');
-    if (!el) return;
+  const el = document.querySelector('#team-grid');
+  if (!el) return;
 
-    el.innerHTML = team.map(m => {
-        const imagem = m[3]
-            ? `<img
-                class="team-photo"
-                src="${m[3]}"
-                alt="Foto de ${m[0]}"
-                onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';"
-              >
-              <div class="avatar fallback-avatar" style="display:none;">
-                ${initials(m[0])}
-              </div>`
-            : `<div class="avatar">${initials(m[0])}</div>`;
+  el.innerHTML = team.map(member => {
+    const nome = member[0];
+    const cargo = member[1];
+    const descricao = member[2];
+    const imagem = member[3];
 
-        return `
-            <article class="team">
-                ${imagem}
-                <h3>${m[0]}</h3>
-                <span>${m[1]}</span>
-                <p>${m[2]}</p>
-            </article>
-        `;
-    }).join('');
+    const avatar = imagem
+      ? `<img class="team-photo" src="${imagem}" alt="Foto de ${nome}">`
+      : `<div class="avatar">${initials(nome)}</div>`;
+
+    return `
+      <article class="team">
+        ${avatar}
+        <h3>${nome}</h3>
+        <span>${cargo}</span>
+        <p>${descricao}</p>
+      </article>
+    `;
+  }).join('');
 }
 
-function renderTeam() { const el = document.querySelector('#team-grid'); if (!el) return; el.innerHTML = team.map(m => `<article class="team"><div class="avatar">${initials(m[0])}</div><h3>${m[0]}</h3><span>${m[1]}</span><p>${m[2]}</p></article>`).join('') }
 function renderDocs() { const el = document.querySelector('#docs-list'); if (!el) return; el.innerHTML = docs.map(d => `<div class="doc"><div class="doc-icon">PDF</div><div><h3>${d[0]}</h3><small>PDF · ${d[1]} · ${d[2]}</small></div><a class="btn" href="#" onclick="alert('O documento será disponibilizado em breve.');return false">Baixar</a></div>`).join('') }
 function validate(input) { let ok = true, msg = ''; if (input.required && !input.value.trim()) { ok = false; msg = 'Este campo é obrigatório.' } else if (input.name === 'nome' && input.value.trim().length < 3) { ok = false; msg = 'Informe ao menos 3 caracteres.' } else if (input.type === 'email' && !/^\S+@\S+\.\S+$/.test(input.value)) { ok = false; msg = 'Informe um e-mail válido.' } else if (input.name === 'telefone' && input.value.replace(/\D/g, '').length < 10) { ok = false; msg = 'Informe ao menos 10 dígitos.' } else if (input.tagName === 'TEXTAREA' && input.value.trim().length < 10) { ok = false; msg = 'Escreva ao menos 10 caracteres.' } const error = input.parentElement.querySelector('.field-error'); if (error) error.textContent = ok ? '' : msg; input.classList.toggle('invalid', !ok); return ok }
 function setupForm(form, message) { if (!form) return; form.querySelectorAll('input,select,textarea').forEach(i => i.addEventListener('blur', () => validate(i))); form.addEventListener('submit', e => { e.preventDefault(); const fields = [...form.querySelectorAll('input,select,textarea')]; const bad = fields.filter(i => !validate(i)); if (bad.length) { bad[0].focus(); return } message.hidden = false; message.textContent = 'Recebemos seus dados. Em uma versão estática, o envio precisa ser concluído por e-mail ou WhatsApp.'; form.reset() }) }

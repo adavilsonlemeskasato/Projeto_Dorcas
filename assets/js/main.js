@@ -152,7 +152,11 @@ function validate(input) { let ok = true, msg = ''; if (input.required && !input
 function setupForm(form, message) { if (!form) return; form.querySelectorAll('input,select,textarea').forEach(i => i.addEventListener('blur', () => validate(i))); form.addEventListener('submit', e => { e.preventDefault(); const fields = [...form.querySelectorAll('input,select,textarea')]; const bad = fields.filter(i => !validate(i)); if (bad.length) { bad[0].focus(); return } message.hidden = false; message.textContent = 'Recebemos seus dados. Em uma versão estática, o envio precisa ser concluído por e-mail ou WhatsApp.'; form.reset() }) }
 
 document.addEventListener('components:ready', () => {
-  renderProjects(); renderActivities(); renderTeam(); renderDocs();
+  // Executa as funções apenas se elas estiverem definidas, evitando que erros quebrem a página inteira
+  if (typeof renderProjects === 'function') renderProjects();
+  if (typeof renderActivities === 'function') renderActivities();
+  if (typeof renderTeam === 'function') renderTeam();
+  if (typeof renderDocs === 'function') renderDocs();
 
   // ⏱️ Troca de imagem automática a cada 6 segundos (6000ms)
   setInterval(() => {
@@ -168,6 +172,8 @@ document.addEventListener('components:ready', () => {
       } catch (e) { }
     });
   }, 6000);
+
+  // ... (mantenha o restante do código do evento components:ready inalterado)
 
   const nav = document.querySelector('#main-nav'), hamb = document.querySelector('.hamb');
   if (nav && hamb) { hamb.addEventListener('click', () => { const open = nav.classList.toggle('aberto'); hamb.setAttribute('aria-expanded', String(open)) }); nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { nav.classList.remove('aberto'); hamb.setAttribute('aria-expanded', 'false') })) }

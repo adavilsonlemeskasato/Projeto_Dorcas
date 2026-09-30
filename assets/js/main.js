@@ -91,7 +91,7 @@ const team = [
     'Presidente',
     'Odenir Cardoso de Resende',
     'Responsável pela condução institucional e representação da Associação.',
-    '../assets/images/Presidente_Dorcas.jpeg'
+    '../assets/images/Presidente_Dorcas.jpg'
   ],
   [
     'Vice-Presidente',

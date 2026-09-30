@@ -1944,8 +1944,11 @@ header nav .nav-help-button:hover {
    ========================================== */
 
 .protecao-cards > article {
+    text-align: center;
+
     border-top: 3px solid var(--laranja);
-    transition: 
+
+    transition:
         transform 0.3s ease,
         box-shadow 0.3s ease,
         border-color 0.3s ease;
@@ -1954,13 +1957,18 @@ header nav .nav-help-button:hover {
 /* Mouse sobre o card */
 .protecao-cards > article:hover {
     border-top-color: var(--verde);
+
     transform: translateY(-8px);
+
     box-shadow: 0 12px 30px rgba(45, 90, 27, 0.15);
 }
 
 /* Número */
 .protecao-cards > article > span {
+    display: block;
+
     color: var(--laranja);
+
     transition: color 0.3s ease;
 }
 
@@ -1971,6 +1979,7 @@ header nav .nav-help-button:hover {
 /* Título */
 .protecao-cards > article h3 {
     color: var(--laranja);
+
     transition: color 0.3s ease;
 }
 

@@ -235,7 +235,7 @@ document.addEventListener('components:ready', () => {
         }
       } catch (e) { }
     });
-  }, 6000);
+  }, 5000);
 
   // ... (o restante do código continua igual)
 

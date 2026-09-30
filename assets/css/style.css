@@ -1905,23 +1905,17 @@ header nav .nav-help-button:hover {
     }
 }
 
-.team-photo {
+.team-photo { 
     display: block;
     width: 70px;
     height: 70px;
     margin: 0 auto;
-    border-radius: 50%;
 
-    /* ALTERE ESTA LINHA DE cover PARA contain */
-    object-fit: cover;
+    border-radius: 50%;
+    object-fit: contain;
     object-position: center;
 
-    /* ESCOLHA UMA DESTAS OPÇÕES: */
-    /* Opção 1: Transparente (Recomendado) */
     background: transparent;
-
-    /* OU Opção 2: O tom bege do seu próprio site */
-    /* background: var(--creme-escuro); */
 }
 
 /* Adiciona a transição suave ao cartão da diretoria */

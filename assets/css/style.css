@@ -82,7 +82,14 @@ header {
 }
 
 header.scrolled {
-    box-shadow: 0 3px 18px #0002;
+    background: rgba(255, 255, 255, 0.85);
+    /* Branco com 85% de opacidade */
+    backdrop-filter: blur(10px);
+    /* O efeito de vidro fosco */
+    -webkit-backdrop-filter: blur(10px);
+    /* Suporte para Safari */
+    box-shadow: 0 4px 20px rgba(23, 61, 11, 0.08);
+    /* Sombra baseada no verde do tema */
     border-color: var(--borda);
 }
 
@@ -1906,20 +1913,20 @@ header nav .nav-help-button:hover {
 }
 
 .team-photo {
-  display: block;
-  width: 70px;
-  height: 70px;
-  margin: 0 auto;
-  border-radius: 50%;
-  
-  /* Volta para o cover para garantir que o círculo fique totalmente preenchido */
-  object-fit: cover; 
-  
-  /* O segredo está aqui: alinha o corte da imagem pelo TOPO, evitando cortar as cabeças */
-  object-position: center top; 
-  
-  background: transparent;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: block;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    border-radius: 50%;
+
+    /* Volta para o cover para garantir que o círculo fique totalmente preenchido */
+    object-fit: cover;
+
+    /* O segredo está aqui: alinha o corte da imagem pelo TOPO, evitando cortar as cabeças */
+    object-position: center top;
+
+    background: transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Efeito ao passar o mouse por cima do cartão */
@@ -1943,7 +1950,7 @@ header nav .nav-help-button:hover {
    CARDS - PROTEÇÃO SOCIAL QUE ACOLHE
    ========================================== */
 
-.protecao-cards > article {
+.protecao-cards>article {
     text-align: center;
 
     border-top: 3px solid var(--laranja);
@@ -1955,7 +1962,7 @@ header nav .nav-help-button:hover {
 }
 
 /* Mouse sobre o card */
-.protecao-cards > article:hover {
+.protecao-cards>article:hover {
     border-top-color: var(--verde);
 
     transform: translateY(-8px);
@@ -1964,7 +1971,7 @@ header nav .nav-help-button:hover {
 }
 
 /* Número */
-.protecao-cards > article > span {
+.protecao-cards>article>span {
     display: block;
 
     color: var(--laranja);
@@ -1972,17 +1979,17 @@ header nav .nav-help-button:hover {
     transition: color 0.3s ease;
 }
 
-.protecao-cards > article:hover > span {
+.protecao-cards>article:hover>span {
     color: var(--verde);
 }
 
 /* Título */
-.protecao-cards > article h3 {
+.protecao-cards>article h3 {
     color: var(--laranja);
 
     transition: color 0.3s ease;
 }
 
-.protecao-cards > article:hover h3 {
+.protecao-cards>article:hover h3 {
     color: var(--verde);
 }

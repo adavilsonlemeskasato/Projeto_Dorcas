@@ -1913,11 +1913,9 @@ header nav .nav-help-button:hover {
     border-radius: 50%;
 
     /* ALTERE ESTA LINHA DE cover PARA contain */
-    object-fit: contain;
+    /* object-fit: contain;*/
+    /*object-position: center;*/
 
-    object-position: center;
-
-    /* O fundo verde-claro vai preencher os espaços em branco que sobrarem nas laterais da foto */
     /* ESCOLHA UMA DESTAS OPÇÕES: */
     /* Opção 1: Transparente (Recomendado) */
     background: transparent;

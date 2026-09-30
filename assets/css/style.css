@@ -1913,7 +1913,7 @@ header nav .nav-help-button:hover {
     border-radius: 50%;
 
     /* ALTERE ESTA LINHA DE cover PARA contain */
-    object-fit: contain;
+    object-fit: cover;
     object-position: center;
 
     /* ESCOLHA UMA DESTAS OPÇÕES: */

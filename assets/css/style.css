@@ -1372,6 +1372,7 @@ main {
         opacity: 0;
         transform: translateY(12px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -1588,7 +1589,7 @@ main {
         height: 220px;
     }
 }
- 
+
 /* ==========================================
     PÁGINAS DE CONTEÚDO (INTRO, ARTIGOS, ETC)
    ========================================== */
@@ -1597,6 +1598,7 @@ main {
     line-height: 1.7;
     margin-bottom: 1rem;
 }
+
 /* Seção: Nossos princípios */
 .principles-grid {
     display: grid;
@@ -1606,7 +1608,7 @@ main {
 }
 
 /* Cada card */
-.principles-grid > article {
+.principles-grid>article {
     min-height: 120px;
     padding: 1rem;
     border: 1px solid #d8cec2;
@@ -1615,13 +1617,13 @@ main {
     cursor: pointer;
 
     transition: transform 0.3s ease,
-                box-shadow 0.3s ease,
-                border-color 0.3s ease,
-                background-color 0.3s ease;
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        background-color 0.3s ease;
 }
 
 /* Efeito somente ao passar o mouse no card */
-.principles-grid > article:hover {
+.principles-grid>article:hover {
     transform: translateY(-6px);
     background-color: #ffffff;
     border-color: #c7682e;
@@ -1629,13 +1631,13 @@ main {
 }
 
 /* Título dentro do card */
-.principles-grid > article h3 {
+.principles-grid>article h3 {
     margin: 0 0 0.5rem;
     color: #173d0b;
 }
 
 /* Texto dentro do card */
-.principles-grid > article p {
+.principles-grid>article p {
     margin: 0;
     line-height: 1.5;
 }
@@ -1670,9 +1672,9 @@ main {
     cursor: pointer;
 
     transition: transform 0.3s ease,
-                box-shadow 0.3s ease,
-                border-color 0.3s ease,
-                background-color 0.3s ease;
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        background-color 0.3s ease;
 }
 
 /* Hover somente nos relatos */
@@ -1703,6 +1705,7 @@ main {
     color: #6d6258;
     font-size: 0.8rem;
 }
+
 @media (max-width: 700px) {
     .relatos-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1725,9 +1728,9 @@ main {
     cursor: pointer;
 
     transition: transform 0.3s ease,
-                box-shadow 0.3s ease,
-                border-color 0.3s ease,
-                background-color 0.3s ease;
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        background-color 0.3s ease;
 }
 
 /* Aparece ao passar o mouse */
@@ -1737,20 +1740,21 @@ main {
     border-color: #c7682e !important;
     box-shadow: 0 10px 22px rgba(199, 104, 46, 0.25) !important;
 }
+
 .cards.three.relatos-grid .relato-card:hover {
     background-color: red !important;
     transform: scale(1.05) !important;
 }
 
 /* Efeito hover suave para os cards de frentes de atuação */
-.section .container .cards.three > div,
-.section .container div[style*="grid"] > div,
+.section .container .cards.three>div,
+.section .container div[style*="grid"]>div,
 .section .container .axis {
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
-.section .container .cards.three > div:hover,
-.section .container div[style*="grid"] > div:hover,
+.section .container .cards.three>div:hover,
+.section .container div[style*="grid"]>div:hover,
 .section .container .axis:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 30px rgba(45, 90, 27, 0.15);
@@ -1902,14 +1906,31 @@ header nav .nav-help-button:hover {
 }
 
 .team-photo {
-  display: block;
-  width: 70px;
-  height: 70px;
-  margin: 0 auto;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
-  background: var(--verde-claro);
+    display: block;
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    border-radius: 50%;
+
+    /* ALTERE ESTA LINHA DE cover PARA contain */
+    object-fit: contain;
+
+    object-position: center;
+
+    /* O fundo verde-claro vai preencher os espaços em branco que sobrarem nas laterais da foto */
+    background: var(--verde-claro);
+}
+
+/* Adiciona a transição suave ao cartão da diretoria */
+.team {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Efeito ao passar o mouse por cima do cartão */
+.team:hover {
+    transform: translateY(-8px);
+    border-color: var(--laranja);
+    box-shadow: 0 10px 22px rgba(199, 104, 46, 0.20);
 }
 
 .team .avatar {

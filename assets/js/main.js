@@ -49,6 +49,17 @@ const activities = [
     'A celebração do Dia dos Pais destacou a importância da presença e dos momentos compartilhados em família.',
     'A programação criou oportunidades para pais e filhos estarem juntos, participando de atividades e aproveitando um momento de descontração. A ação reforçou que o cuidado também está presente nas pequenas experiências vividas em família e no tempo dedicado uns aos outros.',
     ['../assets/images/pais.jpeg']
+  ], [
+    'Toque Artesanal: Oficina de Artesanato e Criatividade, Sabão Natural',
+    'Institucional',
+    '10/06/2026',
+    'Cuidado natural e sustentável, feito por nossa gente e para nossa gente.',
+    'A oficina de sabão sem soda do Projeto Dorcas reflete nosso compromisso com o bem-estar, unindo voluntários e famílias em uma produção que gera afeto e protege a nossa comunidade.',
+    ['../assets/images/sabaoAtividade01.jpeg',
+      '../assets/images/sabaoAtividade02.jpeg',
+      '../assets/images/sabaoAtividade03.jpeg',
+
+    ]
   ],
   [
     'Dorcas completa 4 anos de atuação na comunidade',
@@ -132,7 +143,7 @@ function renderProjects() {
 
 function renderActivities() {
   const el = document.querySelector('#news-grid');
-  
+
   if (!el || typeof activities === 'undefined' || activities.length === 0) return;
 
   el.innerHTML = activities.map((activity, index) => {
@@ -140,9 +151,9 @@ function renderActivities() {
     const category = activity[1];
     const date = activity[2];
     const shortDesc = activity[3];
-    
+
     // activity[5] contém o array com todas as imagens da atividade
-    const imagensArray = activity[5]; 
+    const imagensArray = activity[5];
     const primeiraImg = imagensArray[0];
 
     // O JSON.stringify transforma o array em texto para o HTML ler corretamente no data-images

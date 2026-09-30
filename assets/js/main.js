@@ -51,7 +51,7 @@ const activities = [
     ['../assets/images/pais.jpeg']
   ], [
     'Toque Artesanal: Oficina de Artesanato e Criatividade, Sabão Natural',
-    'Institucional',
+    'Eventos',
     '10/06/2026',
     'Cuidado natural e sustentável, feito por nossa gente e para nossa gente.',
     'A oficina de sabão sem soda do Projeto Dorcas reflete nosso compromisso com o bem-estar, unindo voluntários e famílias em uma produção que gera afeto e protege a nossa comunidade.',
@@ -91,13 +91,13 @@ const team = [
     'Presidente',
     'Odenir Cardoso de Resende',
     'Responsável pela condução institucional e representação da Associação.',
-    null
+    '../assets/images/Presidente_Dorcas.jpeg'
   ],
   [
     'Vice-Presidente',
-    'A definir',
-    'Em breve, esta informação será atualizada.',
-    null
+    'Irany de Oliveira Freitas',
+    'Responsável por auxiliar na gestão e na tomada de decisões estratégicas da Associação.',
+    '../assets/images/Vice_Presidente_Dorcas.jpeg'
   ],
   [
     'Secretária',
@@ -107,9 +107,9 @@ const team = [
   ],
   [
     'Tesoureiro',
-    'A definir',
-    'Em breve, esta informação será atualizada.',
-    null
+    'Sandoval José Cardoso de Rezende',
+    'Responsável pela gestão financeira e contábil da Associação.',
+    '../assets/images/Tesoureiro_Dorcas.jpeg'
   ]
 ];
 

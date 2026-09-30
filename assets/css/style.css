@@ -82,7 +82,7 @@ header {
 }
 
 header.scrolled {
-    background: rgba(255, 255, 255, 0.555);
+    background: rgba(255, 255, 255, 0.034);
     /* Branco com 85% de opacidade */
     backdrop-filter: blur(10px);
     /* O efeito de vidro fosco */

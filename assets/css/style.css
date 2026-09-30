@@ -1905,22 +1905,21 @@ header nav .nav-help-button:hover {
     }
 }
 
-.team-photo { 
-    display: block;
-    width: 70px;
-    height: 70px;
-    margin: 0 auto;
-
-    border-radius: 50%;
-    object-fit: contain;
-    object-position: center;
-
-    background: transparent;
-}
-
-/* Adiciona a transição suave ao cartão da diretoria */
-.team {
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+.team-photo {
+  display: block;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto;
+  border-radius: 50%;
+  
+  /* Volta para o cover para garantir que o círculo fique totalmente preenchido */
+  object-fit: cover; 
+  
+  /* O segredo está aqui: alinha o corte da imagem pelo TOPO, evitando cortar as cabeças */
+  object-position: center top; 
+  
+  background: transparent;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 /* Efeito ao passar o mouse por cima do cartão */

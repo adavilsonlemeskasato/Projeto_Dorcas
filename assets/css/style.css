@@ -1914,7 +1914,7 @@ header nav .nav-help-button:hover {
 
     /* ALTERE ESTA LINHA DE cover PARA contain */
     /* object-fit: contain;*/
-    /*object-position: center;*/
+    object-position: center;
 
     /* ESCOLHA UMA DESTAS OPÇÕES: */
     /* Opção 1: Transparente (Recomendado) */

@@ -1938,3 +1938,43 @@ header nav .nav-help-button:hover {
 .team h3 {
     margin-top: 16px;
 }
+
+/* ==========================================
+   PROTEÇÃO SOCIAL QUE ACOLHE
+   ========================================== */
+
+.protecao-social .cards.three > div {
+    border-top: 3px solid var(--laranja);
+    transition: 
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease,
+        background-color 0.3s ease;
+}
+
+/* Ao passar o mouse */
+.protecao-social .cards.three > div:hover {
+    border-top-color: var(--verde);
+    box-shadow: 0 12px 30px rgba(45, 90, 27, 0.15);
+    transform: translateY(-8px);
+}
+
+/* Número do card */
+.protecao-social .cards.three > div span {
+    color: var(--laranja);
+    transition: color 0.3s ease;
+}
+
+.protecao-social .cards.three > div:hover span {
+    color: var(--verde);
+}
+
+/* Título do card */
+.protecao-social .cards.three > div h3 {
+    color: var(--laranja);
+    transition: color 0.3s ease;
+}
+
+.protecao-social .cards.three > div:hover h3 {
+    color: var(--verde);
+}

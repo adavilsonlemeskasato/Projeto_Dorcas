@@ -1940,41 +1940,40 @@ header nav .nav-help-button:hover {
 }
 
 /* ==========================================
-   PROTEÇÃO SOCIAL QUE ACOLHE
+   CARDS - PROTEÇÃO SOCIAL QUE ACOLHE
    ========================================== */
 
-.protecao-social .cards.three > div {
+.protecao-cards > article {
     border-top: 3px solid var(--laranja);
     transition: 
         transform 0.3s ease,
         box-shadow 0.3s ease,
-        border-color 0.3s ease,
-        background-color 0.3s ease;
+        border-color 0.3s ease;
 }
 
-/* Ao passar o mouse */
-.protecao-social .cards.three > div:hover {
+/* Mouse sobre o card */
+.protecao-cards > article:hover {
     border-top-color: var(--verde);
-    box-shadow: 0 12px 30px rgba(45, 90, 27, 0.15);
     transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(45, 90, 27, 0.15);
 }
 
-/* Número do card */
-.protecao-social .cards.three > div span {
+/* Número */
+.protecao-cards > article > span {
     color: var(--laranja);
     transition: color 0.3s ease;
 }
 
-.protecao-social .cards.three > div:hover span {
+.protecao-cards > article:hover > span {
     color: var(--verde);
 }
 
-/* Título do card */
-.protecao-social .cards.three > div h3 {
+/* Título */
+.protecao-cards > article h3 {
     color: var(--laranja);
     transition: color 0.3s ease;
 }
 
-.protecao-social .cards.three > div:hover h3 {
+.protecao-cards > article:hover h3 {
     color: var(--verde);
 }

@@ -1315,20 +1315,17 @@ main {
 
 .site-footer .copyright {
     display: flex;
-    justify-content: space-between;
-    /* Coloca um de cada lado */
-    align-items: center;
-    /* Centraliza os textos verticalmente */
-    gap: 16px;
+    flex-direction: column; /* Coloca um item abaixo do outro */
+    align-items: center; /* Centraliza os itens na tela */
+    gap: 8px; /* Espaçamento entre a primeira e a segunda linha */
     color: var(--footer-muted);
-    border-top: 1px solid #ffffff1f;
+    border-top: 1px solid #ffffff1f; /* Mantém a linha fina em cima */
     margin-top: 46px;
     padding-top: 18px;
     font-size: 13px;
     width: 100%;
-    /* Garante que o contêiner ocupe todo o espaço disponível */
+    text-align: center;
 }
-
 /* ==========================================
    ABAS (TABS)
    ========================================== */

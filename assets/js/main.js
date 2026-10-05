@@ -471,33 +471,48 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-document.addEventListener('submit', function (event) {
-  // Verifica se o envio veio de um dos formulários de voluntário pelos IDs
-  if (event.target.id === 'volunteer-form' || event.target.id === 'help-volunteer-form') {
-    event.preventDefault(); // Impede o recarregamento da página
+// --- CÓDIGO DE INTEGRAÇÃO COM O WHATSAPP ---
+(function integrarWhatsApp() {
+    // Seleciona os dois formulários de voluntário (o da página e o do modal)
+    const forms = [
+        document.querySelector('#volunteer-form'),
+        document.querySelector('#help-volunteer-form')
+    ];
 
-    // O FormData pega automaticamente os valores baseado no atributo "name" dos inputs
-    const formData = new FormData(event.target);
-    const nome = formData.get('nome');
-    const email = formData.get('email');
-    const telefone = formData.get('telefone');
-    const area = formData.get('area');
-    const disponibilidade = formData.get('disponibilidade');
+    forms.forEach(form => {
+        if (!form) return;
 
-    // Monta a mensagem formatada
-    const mensagem = `Olá, quero ser voluntário no Projeto Dorcas!\n\n` +
-      `*Nome:* ${nome}\n` +
-      `*E-mail:* ${email}\n` +
-      `*Telefone:* ${telefone}\n` +
-      `*Área de interesse:* ${area}\n` +
-      `*Disponibilidade:* ${disponibilidade}`;
+        // Guardamos a função original que limpa o formulário
+        const limpezaOriginal = form.reset;
 
-    // ATENÇÃO: Substitua pelo número real do WhatsApp do Projeto Dorcas
-    // Formato: 55 + DDD + Número. Exemplo de Cuiabá/MT: 5565999999999
-    const numeroDestino = "5565992234273";
+        // Substituímos a função de limpar por uma que envia o WhatsApp primeiro
+        // Esta função "reset" só é chamada pelos seus scripts quando a validação dá 100% certo!
+        form.reset = function() {
+            // 1. Captura os dados antes de os apagar
+            const formData = new FormData(form);
+            const nome = formData.get('nome');
+            const email = formData.get('email');
+            const telefone = formData.get('telefone');
+            const area = formData.get('area');
+            const disponibilidade = formData.get('disponibilidade');
 
-    // Cria a URL e abre em uma nova aba
-    const urlWhatsApp = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(mensagem)}`;
-    window.open(urlWhatsApp, '_blank');
-  }
-});
+            // 2. Monta a mensagem formatada para o WhatsApp
+            const mensagem = `Olá, quero ser voluntário no Projeto Dorcas!\n\n` +
+                             `*Nome:* ${nome}\n` +
+                             `*E-mail:* ${email}\n` +
+                             `*Telefone:* ${telefone}\n` +
+                             `*Área de interesse:* ${area}\n` +
+                             `*Disponibilidade:* ${disponibilidade}`;
+
+            // Número configurado
+            const numeroDestino = "5565992234273"; 
+
+            // 3. Cria a URL e abre o WhatsApp numa nova aba
+            const urlWhatsApp = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(mensagem)}`;
+            window.open(urlWhatsApp, '_blank');
+
+            // 4. Depois de abrir o WhatsApp, executa a limpeza original do formulário
+            limpezaOriginal.call(form);
+        };
+    });
+})();

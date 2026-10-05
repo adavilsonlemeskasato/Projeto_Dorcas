@@ -521,7 +521,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // ATENÇÃO: Número configurado do Projeto Dorcas
-            const numeroDestino = "5565992234273"; 
+            const numeroDestino = "5565981290071"; 
 
             // Cria a URL da API do WhatsApp e abre numa nova aba
             const urlWhatsApp = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(mensagemFormatada)}`;

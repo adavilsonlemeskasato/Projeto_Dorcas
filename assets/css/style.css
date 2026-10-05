@@ -1316,12 +1316,17 @@ main {
 .site-footer .copyright {
     display: flex;
     justify-content: space-between;
+    /* Coloca um de cada lado */
+    align-items: center;
+    /* Centraliza os textos verticalmente */
     gap: 16px;
     color: var(--footer-muted);
     border-top: 1px solid #ffffff1f;
     margin-top: 46px;
     padding-top: 18px;
     font-size: 13px;
+    width: 100%;
+    /* Garante que o contêiner ocupe todo o espaço disponível */
 }
 
 /* ==========================================
@@ -1494,11 +1499,30 @@ main {
         grid-column: 1/-1;
     }
 
-    .site-footer .copyright {
-        flex-direction: column;
-        gap: 6px;
-        margin-top: 34px;
+
+
+    /* Evita que os textos quebrem em duas linhas em telas médias */
+    .site-footer .copyright span {
+        white-space: nowrap;
     }
+
+    /* Estilo apenas para telas pequenas (Celulares) */
+    @media (max-width: 768px) {
+        .site-footer .copyright {
+            flex-direction: column;
+            /* Empilha os itens */
+            justify-content: center;
+            text-align: center;
+            gap: 6px;
+            margin-top: 34px;
+        }
+
+        /* Permite a quebra de texto apenas no celular, se necessário */
+        .site-footer .copyright span {
+            white-space: normal;
+        }
+    }
+
 
     .help-donate-grid,
     .help-volunteer-form,

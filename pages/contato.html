@@ -39,12 +39,29 @@
                         </div>
                     </div>
                     <form class="form" id="contact-form">
-                        <h2>Envie uma mensagem</h2><label>Nome<input name="nome" required minlength="3"><small
-                                class="field-error"></small></label><label>E-mail<input name="email" type="email"
-                                required><small class="field-error"></small></label><label>Mensagem<textarea
-                                name="mensagem" required minlength="10" rows="6"></textarea><small
-                                class="field-error"></small></label><button class="btn btn-orange" type="submit">Enviar
-                            mensagem</button>
+                        <h2>Envie uma mensagem</h2>
+
+                        <label>Nome
+                            <input name="nome" required minlength="3">
+                            <small class="field-error"></small>
+                        </label>
+
+                        <label>E-mail
+                            <input name="email" type="email" required>
+                            <small class="field-error"></small>
+                        </label>
+
+                        <label>Telefone (WhatsApp)
+                            <input name="telefone" type="tel" required>
+                            <small class="field-error"></small>
+                        </label>
+
+                        <label>Mensagem
+                            <textarea name="mensagem" required minlength="10" rows="6"></textarea>
+                            <small class="field-error"></small>
+                        </label>
+
+                        <button class="btn btn-orange" type="submit">Enviar mensagem</button>
                         <div class="success" hidden></div>
                     </form>
                 </div>

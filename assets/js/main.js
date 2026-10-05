@@ -471,47 +471,63 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-// --- CÓDIGO DE INTEGRAÇÃO COM O WHATSAPP ---
+// --- CÓDIGO DE INTEGRAÇÃO COM O WHATSAPP (VOLUNTÁRIOS E CONTATO) ---
 (function integrarWhatsApp() {
-    // Seleciona os dois formulários de voluntário (o da página e o do modal)
+    // Seleciona todos os formulários que vão enviar dados para o WhatsApp
     const forms = [
         document.querySelector('#volunteer-form'),
-        document.querySelector('#help-volunteer-form')
+        document.querySelector('#help-volunteer-form'),
+        document.querySelector('#contact-form'),       // Formulário da página de contato
+        document.querySelector('#contact-dialog-form') // Formulário de contato do modal (caso exista)
     ];
 
     forms.forEach(form => {
         if (!form) return;
 
-        // Guardamos a função original que limpa o formulário
+        // Guardamos a função original que limpa o formulário após a validação
         const limpezaOriginal = form.reset;
 
-        // Substituímos a função de limpar por uma que envia o WhatsApp primeiro
-        // Esta função "reset" só é chamada pelos seus scripts quando a validação dá 100% certo!
+        // Substituímos a limpeza por uma função que abre o WhatsApp antes de apagar os dados
         form.reset = function() {
-            // 1. Captura os dados antes de os apagar
             const formData = new FormData(form);
-            const nome = formData.get('nome');
-            const email = formData.get('email');
-            const telefone = formData.get('telefone');
-            const area = formData.get('area');
-            const disponibilidade = formData.get('disponibilidade');
+            
+            // Captura os dados comuns
+            const nome = formData.get('nome') || '';
+            const email = formData.get('email') || '';
+            
+            let mensagemFormatada = '';
 
-            // 2. Monta a mensagem formatada para o WhatsApp
-            const mensagem = `Olá, quero ser voluntário no Projeto Dorcas!\n\n` +
-                             `*Nome:* ${nome}\n` +
-                             `*E-mail:* ${email}\n` +
-                             `*Telefone:* ${telefone}\n` +
-                             `*Área de interesse:* ${area}\n` +
-                             `*Disponibilidade:* ${disponibilidade}`;
+            // Verifica qual formulário está a ser enviado para montar a mensagem correta
+            if (form.id === 'contact-form' || form.id === 'contact-dialog-form') {
+                // Monta a mensagem do formulário de CONTATO
+                const mensagem = formData.get('mensagem') || '';
+                
+                mensagemFormatada = `Olá, gostaria de entrar em contato com o Projeto Dorcas!\n\n` +
+                                    `*Nome:* ${nome}\n` +
+                                    `*E-mail:* ${email}\n` +
+                                    `*Mensagem:* ${mensagem}`;
+            } else {
+                // Monta a mensagem do formulário de VOLUNTÁRIO
+                const telefone = formData.get('telefone') || '';
+                const area = formData.get('area') || '';
+                const disponibilidade = formData.get('disponibilidade') || '';
+                
+                mensagemFormatada = `Olá, quero ser voluntário no Projeto Dorcas!\n\n` +
+                                    `*Nome:* ${nome}\n` +
+                                    `*E-mail:* ${email}\n` +
+                                    `*Telefone:* ${telefone}\n` +
+                                    `*Área de interesse:* ${area}\n` +
+                                    `*Disponibilidade:* ${disponibilidade}`;
+            }
 
-            // Número configurado
+            // ATENÇÃO: Número configurado do Projeto Dorcas
             const numeroDestino = "5565992234273"; 
 
-            // 3. Cria a URL e abre o WhatsApp numa nova aba
-            const urlWhatsApp = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(mensagem)}`;
+            // Cria a URL da API do WhatsApp e abre numa nova aba
+            const urlWhatsApp = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(mensagemFormatada)}`;
             window.open(urlWhatsApp, '_blank');
 
-            // 4. Depois de abrir o WhatsApp, executa a limpeza original do formulário
+            // Executa a limpeza original para esvaziar os campos e mostrar a mensagem de sucesso
             limpezaOriginal.call(form);
         };
     });

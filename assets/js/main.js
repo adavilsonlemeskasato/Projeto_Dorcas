@@ -469,3 +469,35 @@ document.addEventListener("DOMContentLoaded", () => {
   window.addEventListener("scroll", runCounters);
   setTimeout(runCounters, 500);
 });
+
+
+  document.addEventListener('submit', function(event) {
+            // Verifica se o envio veio de um dos formulários de voluntário pelos IDs
+            if (event.target.id === 'volunteer-form' || event.target.id === 'help-volunteer-form') {
+                event.preventDefault(); // Impede o recarregamento da página
+
+                // O FormData pega automaticamente os valores baseado no atributo "name" dos inputs
+                const formData = new FormData(event.target);
+                const nome = formData.get('nome');
+                const email = formData.get('email');
+                const telefone = formData.get('telefone');
+                const area = formData.get('area');
+                const disponibilidade = formData.get('disponibilidade');
+
+                // Monta a mensagem formatada
+                const mensagem = `Olá, quero ser voluntário no Projeto Dorcas!\n\n` +
+                                 `*Nome:* ${nome}\n` +
+                                 `*E-mail:* ${email}\n` +
+                                 `*Telefone:* ${telefone}\n` +
+                                 `*Área de interesse:* ${area}\n` +
+                                 `*Disponibilidade:* ${disponibilidade}`;
+
+                // ATENÇÃO: Substitua pelo número real do WhatsApp do Projeto Dorcas
+                // Formato: 55 + DDD + Número. Exemplo de Cuiabá/MT: 5565999999999
+                const numeroDestino = "5565992234273"; 
+
+                // Cria a URL e abre em uma nova aba
+                const urlWhatsApp = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(mensagem)}`;
+                window.open(urlWhatsApp, '_blank');
+            }
+        });

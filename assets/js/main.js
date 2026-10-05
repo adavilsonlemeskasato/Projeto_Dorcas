@@ -213,7 +213,7 @@ function renderTeam() {
 
 function renderDocs() { const el = document.querySelector('#docs-list'); if (!el) return; el.innerHTML = docs.map(d => `<div class="doc"><div class="doc-icon">PDF</div><div><h3>${d[0]}</h3><small>PDF · ${d[1]} · ${d[2]}</small></div><a class="btn" href="#" onclick="alert('O documento será disponibilizado em breve.');return false">Baixar</a></div>`).join('') }
 function validate(input) { let ok = true, msg = ''; if (input.required && !input.value.trim()) { ok = false; msg = 'Este campo é obrigatório.' } else if (input.name === 'nome' && input.value.trim().length < 3) { ok = false; msg = 'Informe ao menos 3 caracteres.' } else if (input.type === 'email' && !/^\S+@\S+\.\S+$/.test(input.value)) { ok = false; msg = 'Informe um e-mail válido.' } else if (input.name === 'telefone' && input.value.replace(/\D/g, '').length < 10) { ok = false; msg = 'Informe ao menos 10 dígitos.' } else if (input.tagName === 'TEXTAREA' && input.value.trim().length < 10) { ok = false; msg = 'Escreva ao menos 10 caracteres.' } const error = input.parentElement.querySelector('.field-error'); if (error) error.textContent = ok ? '' : msg; input.classList.toggle('invalid', !ok); return ok }
-function setupForm(form, message) { if (!form) return; form.querySelectorAll('input,select,textarea').forEach(i => i.addEventListener('blur', () => validate(i))); form.addEventListener('submit', e => { e.preventDefault(); const fields = [...form.querySelectorAll('input,select,textarea')]; const bad = fields.filter(i => !validate(i)); if (bad.length) { bad[0].focus(); return } message.hidden = false; message.textContent = 'Recebemos seus dados. Em uma versão estática, o envio precisa ser concluído por e-mail ou WhatsApp.'; form.reset() }) }
+function setupForm(form, message) { if (!form) return; form.querySelectorAll('input,select,textarea').forEach(i => i.addEventListener('blur', () => validate(i))); form.addEventListener('submit', e => { e.preventDefault(); const fields = [...form.querySelectorAll('input,select,textarea')]; const bad = fields.filter(i => !validate(i)); if (bad.length) { bad[0].focus(); return } message.hidden = false; message.textContent = 'Recebemos seus dados. Conclua sua inscrição pelo WhatsApp redirecionando...'; form.reset() }) }
 
 document.addEventListener('components:ready', () => {
   // Usamos try/catch para isolar erros. Se um falhar, o próximo continua.
@@ -384,7 +384,7 @@ document.addEventListener('components:ready', () => {
     if (!valid) { firstInvalid?.focus(); return; }
     const success = form.querySelector('.success');
     success.hidden = false;
-    success.textContent = 'Recebemos seus dados. A equipe da Dorcas entrará em contato.';
+    success.textContent = 'Recebemos seus dados. Conclua sua inscrição pelo WhatsApp redirecionando...';
     form.reset();
   });
 });
@@ -473,62 +473,62 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // --- CÓDIGO DE INTEGRAÇÃO COM O WHATSAPP (VOLUNTÁRIOS E CONTATO) ---
 (function integrarWhatsApp() {
-    // Seleciona todos os formulários que vão enviar dados para o WhatsApp
-    const forms = [
-        document.querySelector('#volunteer-form'),
-        document.querySelector('#help-volunteer-form'),
-        document.querySelector('#contact-form'),       // Formulário da página de contato
-        document.querySelector('#contact-dialog-form') // Formulário de contato do modal (caso exista)
-    ];
+  // Seleciona todos os formulários que vão enviar dados para o WhatsApp
+  const forms = [
+    document.querySelector('#volunteer-form'),
+    document.querySelector('#help-volunteer-form'),
+    document.querySelector('#contact-form'),       // Formulário da página de contato
+    document.querySelector('#contact-dialog-form') // Formulário de contato do modal (caso exista)
+  ];
 
-    forms.forEach(form => {
-        if (!form) return;
+  forms.forEach(form => {
+    if (!form) return;
 
-        // Guardamos a função original que limpa o formulário após a validação
-        const limpezaOriginal = form.reset;
+    // Guardamos a função original que limpa o formulário após a validação
+    const limpezaOriginal = form.reset;
 
-        // Substituímos a limpeza por uma função que abre o WhatsApp antes de apagar os dados
-        form.reset = function() {
-            const formData = new FormData(form);
-            
-            // Captura os dados comuns
-            const nome = formData.get('nome') || '';
-            const email = formData.get('email') || '';
-            
-            let mensagemFormatada = '';
+    // Substituímos a limpeza por uma função que abre o WhatsApp antes de apagar os dados
+    form.reset = function () {
+      const formData = new FormData(form);
 
-            // Verifica qual formulário está a ser enviado para montar a mensagem correta
-            if (form.id === 'contact-form' || form.id === 'contact-dialog-form') {
-                // Monta a mensagem do formulário de CONTATO
-                const mensagem = formData.get('mensagem') || '';
-                
-                mensagemFormatada = `Olá, gostaria de entrar em contato com o Projeto Dorcas!\n\n` +
-                                    `*Nome:* ${nome}\n` +
-                                    `*E-mail:* ${email}\n` +
-                                    `*Mensagem:* ${mensagem}`;
-            } else {
-                // Monta a mensagem do formulário de VOLUNTÁRIO
-                const telefone = formData.get('telefone') || '';
-                const area = formData.get('area') || '';
-                const disponibilidade = formData.get('disponibilidade') || '';
-                
-                mensagemFormatada = `Olá, quero ser voluntário no Projeto Dorcas!\n\n` +
-                                    `*Nome:* ${nome}\n` +
-                                    `*E-mail:* ${email}\n` +
-                                    `*Telefone:* ${telefone}\n` +
-                                    `*Área de interesse:* ${area}\n` +
-                                    `*Disponibilidade:* ${disponibilidade}`;
-            }
+      // Captura os dados comuns
+      const nome = formData.get('nome') || '';
+      const email = formData.get('email') || '';
 
-            // ATENÇÃO: Número configurado do Projeto Dorcas
-            const numeroDestino = "5565981290071"; 
+      let mensagemFormatada = '';
 
-            // Cria a URL da API do WhatsApp e abre numa nova aba
-            const urlWhatsApp = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(mensagemFormatada)}`;
-            window.open(urlWhatsApp, '_blank');
+      // Verifica qual formulário está a ser enviado para montar a mensagem correta
+      if (form.id === 'contact-form' || form.id === 'contact-dialog-form') {
+        // Monta a mensagem do formulário de CONTATO
+        const mensagem = formData.get('mensagem') || '';
 
-            // Executa a limpeza original para esvaziar os campos e mostrar a mensagem de sucesso
-            limpezaOriginal.call(form);
-        };
-    });
+        mensagemFormatada = `Olá, gostaria de entrar em contato com o Projeto Dorcas!\n\n` +
+          `*Nome:* ${nome}\n` +
+          `*E-mail:* ${email}\n` +
+          `*Mensagem:* ${mensagem}`;
+      } else {
+        // Monta a mensagem do formulário de VOLUNTÁRIO
+        const telefone = formData.get('telefone') || '';
+        const area = formData.get('area') || '';
+        const disponibilidade = formData.get('disponibilidade') || '';
+
+        mensagemFormatada = `Olá, quero ser voluntário no Projeto Dorcas!\n\n` +
+          `*Nome:* ${nome}\n` +
+          `*E-mail:* ${email}\n` +
+          `*Telefone:* ${telefone}\n` +
+          `*Área de interesse:* ${area}\n` +
+          `*Disponibilidade:* ${disponibilidade}`;
+      }
+
+      // ATENÇÃO: Número configurado do Projeto Dorcas
+      const numeroDestino = "5565981290071";
+
+      // Cria a URL da API do WhatsApp e abre numa nova aba
+      const urlWhatsApp = `https://wa.me/${numeroDestino}?text=${encodeURIComponent(mensagemFormatada)}`;
+      window.open(urlWhatsApp, '_blank');
+
+      // Executa a limpeza original para esvaziar os campos e mostrar a mensagem de sucesso
+      limpezaOriginal.call(form);
+    };
+  });
 })();

@@ -370,10 +370,11 @@ main {
 /* Imagens dos cards de projetos */
 #projects-grid .card img {
     width: 100%;
-    height: 250px;
-    /* Pode ajustar este valor conforme o visual desejado */
-    object-fit: cover;
-    object-position: center;
+    height: auto;
+    /* Deixa a altura crescer naturalmente consoante a largura */
+    object-fit: contain;
+    /* Garante que a imagem inteira fica visível */
+    background-color: transparent;
 }
 
 /* Padronização de imagens para nunca cortarem */

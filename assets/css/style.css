@@ -2029,3 +2029,53 @@ header nav .nav-help-button:hover {
 .protecao-cards>article:hover h3 {
     color: var(--verde);
 }
+
+/* ==========================================
+   EFEITOS DE HOVER - PÁGINA DE TRANSPARÊNCIA
+   ========================================== */
+
+/* 1. Efeito para as linhas dos Documentos/PDFs (.doc) */
+.doc {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    border-radius: 8px;
+    /* Arredonda levemente os cantos */
+}
+
+.doc:hover {
+    transform: translateY(-5px);
+    /* Move o cartão ligeiramente para cima */
+    box-shadow: 0 10px 25px rgba(200, 96, 42, 0.15);
+    /* Sombra suave alaranjada */
+    border-color: var(--laranja);
+    /* Muda a cor da linha à volta para laranja */
+}
+
+/* 1.1 Efeito opcional no botão "Baixar" quando passa o mouse na linha inteira */
+.doc:hover .btn {
+    background-color: var(--laranja);
+    color: #fff;
+    border-color: var(--laranja);
+}
+
+
+/* 2. Efeito para os bloquinhos de Informações Legais (CNPJ, Fundação, etc.) */
+.legal-grid div {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent;
+    /* Prepara uma borda invisível para não dar "pulo" no tamanho */
+    border-radius: 8px;
+    /* Cantos arredondados */
+    cursor: default;
+    /* Mostra que é um elemento interativo */
+}
+
+.legal-grid div:hover {
+    transform: translateY(-5px);
+    /* Move para cima */
+    background-color: #ffffff;
+    /* Fica totalmente branco para destacar */
+    box-shadow: 0 10px 25px rgba(200, 96, 42, 0.15);
+    /* Sombra suave */
+    border-color: var(--laranja);
+    /* Borda laranja */
+}

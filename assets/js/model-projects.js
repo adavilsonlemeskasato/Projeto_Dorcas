@@ -58,17 +58,5 @@ window.DorcasProjects = [
     long: 'O Natal é tempo de compartilhar amor e renovar a esperança. Por meio desta campanha, a Dorcas reúne doações de brinquedos para proporcionar um fim de ano mais acolhedor às crianças e às famílias da comunidade. Cada contribuição ajuda a levar alegria às crianças e a tornar essa época ainda mais especial, lembrando que o verdadeiro espírito do Natal está no amor e na generosidade.',
     impact: 'A doação durante o Natal contribui para o bem-estar e alegria das famílias atendidas, fortalecendo laços de solidariedade.',
     how: 'Você pode apoiar doando itens de consumo ou recursos via Pix.'
-  },
-  {
-    id: 6,
-    title: 'Promoção dos Direitos Humanos e Cidadania',
-    category: 'Direitos Humanos',
-    status: 'Em andamento',
-    color: 'cor-laranja',
-    image: '../assets/images/direitos-humanos.jpeg',
-    short: 'Informação, participação e garantia de direitos.',
-    long: 'A iniciativa promove conhecimento sobre direitos humanos, cidadania e acesso às políticas públicas, estimulando a participação da comunidade.',
-    impact: 'A informação fortalece as pessoas para reconhecer, reivindicar e exercer seus direitos.',
-    how: 'Ajude a divulgar as ações e a criar espaços de informação e participação.'
   }
 ];

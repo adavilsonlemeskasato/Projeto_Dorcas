@@ -225,11 +225,28 @@ function renderTeam() {
 function renderDocs() {
   const el = document.querySelector("#docs-list");
   if (!el) return;
+
   el.innerHTML = docs
-    .map(
-      (d) =>
-        `<div class="doc"><div class="doc-icon">PDF</div><div><h3>${d[0]}</h3><small>PDF · ${d[1]} · ${d[2]}</small></div><a class="btn" href="${d[3]}" target="_blank">Baixar</a></div>`,
-    )
+    .map((d) => {
+      const link = d[3];
+      const isEmBreve = !link || link === "#";
+
+      return `
+            <div class="doc">
+                <div class="doc-icon">PDF</div>
+                <div>
+                    <h3>${d[0]}</h3>
+                    <small>PDF · ${d[1]} · ${d[2]}</small>
+                </div>
+                <a class="btn ${isEmBreve ? "btn-outline-green" : "btn-outline"}" 
+                   href="${isEmBreve ? "#" : link}" 
+                   ${isEmBreve ? "" : 'target="_blank"'}
+                   onclick="${isEmBreve ? "alert('O documento será disponibilizado em breve.'); return false;" : ""}">
+                   ${isEmBreve ? "Em breve" : "Baixar"}
+                </a>
+            </div>
+        `;
+    })
     .join("");
 }
 function validate(input) {

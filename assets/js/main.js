@@ -58,22 +58,6 @@ const activities = [
       "../assets/images/sabaoAtividade03.jpeg",
     ],
   ],
-  [
-    "Dorcas completa 4 anos de atuação na comunidade",
-    "Institucional",
-    "25/08/2026",
-    "Celebramos uma história construída com muitas mãos.",
-    "A celebração marca uma trajetória de compromisso com Santo Antônio de Leverger, construída com a participação de voluntários, parceiros, famílias e comunidade.",
-    ["../assets/images/aniversario.jpeg"],
-  ],
-  [
-    "Saiba quais serviços a Dorcas oferece à comunidade",
-    "Serviços",
-    "01/07/2026",
-    "Conheça nossos projetos e formas de atendimento.",
-    "A atividade apresenta os serviços, projetos e formas de acolhimento oferecidos pela Dorcas, ajudando a comunidade a encontrar orientação e apoio.",
-    ["../assets/images/servicos.jpeg"],
-  ],
 ];
 
 const docs = [

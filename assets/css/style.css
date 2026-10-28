@@ -2079,3 +2079,22 @@ header nav .nav-help-button:hover {
     border-color: var(--laranja);
     /* Borda laranja */
 }
+/* Transparência: deixa o texto do botão sempre visível */
+#docs-list .doc .btn-outline {
+    color: #25633b;
+    background-color: #ffffff;
+    border: 1px solid #25633b;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+/* Botão verde ao passar o mouse ou selecionar pelo teclado */
+#docs-list .doc .btn-outline:hover,
+#docs-list .doc .btn-outline:focus-visible {
+    color: #ffffff;
+    background-color: #25633b;
+    border-color: #25633b;
+}

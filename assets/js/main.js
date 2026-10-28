@@ -80,10 +80,11 @@ const activities = [
 ];
 
 const docs = [
-  ['Estatuto Social (2025)', '245 KB', '28/11/2025'],
-  ['Ata de Assembleia — 28/11/2025', '180 KB', '28/11/2025'],
+
   ['Ata de Assembleia — 12/08/2026', '95 KB', '12/08/2026'],
-  ['Ata de Fundação — 25/08/2022', '120 KB', '25/08/2022']
+  ['Ata de Assembleia — 28/11/2025', '180 KB', '28/11/2025'],
+  ['Estatuto Social (2022)', '834 KB', ' 25/08/2022'],
+  ['Ata de Fundação — 25/08/2022', '838 KB', '../assets/transparencia/ESTATUTO_PROJETO_DORCAS_2022.pdf']
 ];
 
 const team = [

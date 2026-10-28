@@ -212,10 +212,65 @@ function renderTeam() {
   }).join('');
 }
 
-function renderDocs() { const el = document.querySelector('#docs-list'); if (!el) return; el.innerHTML = docs.map(d => `<div class="doc"><div class="doc-icon">PDF</div><div><h3>${d[0]}</h3><small>PDF · ${d[1]} · ${d[2]}</small></div><a class="btn" href="#" onclick="alert('O documento será disponibilizado em breve.');return false">Baixar</a></div>`).join('') }
-function validate(input) { let ok = true, msg = ''; if (input.required && !input.value.trim()) { ok = false; msg = 'Este campo é obrigatório.' } else if (input.name === 'nome' && input.value.trim().length < 3) { ok = false; msg = 'Informe ao menos 3 caracteres.' } else if (input.type === 'email' && !/^\S+@\S+\.\S+$/.test(input.value)) { ok = false; msg = 'Informe um e-mail válido.' } else if (input.name === 'telefone' && input.value.replace(/\D/g, '').length < 10) { ok = false; msg = 'Informe ao menos 10 dígitos.' } else if (input.tagName === 'TEXTAREA' && input.value.trim().length < 10) { ok = false; msg = 'Escreva ao menos 10 caracteres.' } const error = input.parentElement.querySelector('.field-error'); if (error) error.textContent = ok ? '' : msg; input.classList.toggle('invalid', !ok); return ok }
-function setupForm(form, message) { if (!form) return; form.querySelectorAll('input,select,textarea').forEach(i => i.addEventListener('blur', () => validate(i))); form.addEventListener('submit', e => { e.preventDefault(); const fields = [...form.querySelectorAll('input,select,textarea')]; const bad = fields.filter(i => !validate(i)); if (bad.length) { bad[0].focus(); return } message.hidden = false; message.textContent = 'Recebemos seus dados. Conclua sua inscrição pelo WhatsApp redirecionando...'; form.reset() }) }
+function renderDocs() {
+  const el = document.querySelector('#docs-list');
+  if (!el) return;
+  el.innerHTML = docs.map(d => `<div class="doc"><div class="doc-icon">PDF</div><div><h3>${d[0]}</h3><small>PDF · ${d[1]} · ${d[2]}</small></div><a class="btn" href="${d[3]}" target="_blank">Baixar</a></div>`).join('');
+}
+function validate(input) {
+  let ok = true;
+  let msg = '';
 
+  if (input.required && !input.value.trim()) {
+    ok = false;
+    msg = 'Este campo é obrigatório.';
+  } else if (input.name === 'nome' && input.value.trim().length < 3) {
+    ok = false;
+    msg = 'Informe ao menos 3 caracteres.';
+  } else if (input.type === 'email' && !/^\S+@\S+\.\S+$/.test(input.value)) {
+    ok = false;
+    msg = 'Informe um e-mail válido.';
+  } else if (input.name === 'telefone' && input.value.replace(/\D/g, '').length < 10) {
+    ok = false;
+    msg = 'Informe ao menos 10 dígitos.';
+  } else if (input.tagName === 'TEXTAREA' && input.value.trim().length < 10) {
+    ok = false;
+    msg = 'Escreva ao menos 10 caracteres.';
+  }
+
+  const error = input.parentElement.querySelector('.field-error');
+  if (error) {
+    error.textContent = ok ? '' : msg;
+  }
+
+  input.classList.toggle('invalid', !ok);
+
+  return ok;
+}
+
+function setupForm(form, message) {
+  if (!form) return;
+
+  form.querySelectorAll('input, select, textarea').forEach(i => {
+    i.addEventListener('blur', () => validate(i));
+  });
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const fields = [...form.querySelectorAll('input, select, textarea')];
+    const bad = fields.filter(i => !validate(i));
+
+    if (bad.length) {
+      bad[0].focus();
+      return;
+    }
+
+    message.hidden = false;
+    message.textContent = 'Recebemos seus dados. Conclua sua inscrição pelo WhatsApp redirecionando...';
+    form.reset();
+  });
+}
 document.addEventListener('components:ready', () => {
   // Usamos try/catch para isolar erros. Se um falhar, o próximo continua.
   try { renderProjects(); } catch (e) { console.warn("Projetos ignorados nesta página"); }

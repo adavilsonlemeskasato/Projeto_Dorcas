@@ -1204,34 +1204,44 @@ main {
     align-items: start;
 }
 
-/* Limita o container e corta a sobra invisível inferior da imagem */
+/* Container do link no footer */
+/* Container da logo no rodapé */
 .site-footer .footer-brand {
-    display: block !important;
-    width: 190px !important;
-    height: 140px !important;
-    /* altura exata da arte visível */
-    overflow: hidden !important;
-    /* esconde a área vazia de baixo */
-    margin: 0 0 10px 0 !important;
-    /* pequeno respiro antes do texto */
-    padding: 0 !important;
+    display: block;
+    margin-bottom: 0 !important;
+    /* remove o espaço inferior do link */
+    line-height: 1;
 }
 
-/* Encaixa a logo no topo da moldura */
+/* Imagem da logo */
 .site-footer .footer-brand .site-logo {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-    object-fit: contain !important;
-    object-position: top center !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    display: block;
+    width: 210px;
+    /* tamanho equilibrado */
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: left bottom;
+    /* alinha a arte junto à borda inferior */
+    margin: 0 0 -22px 0 !important;
+    /* margem negativa para compensar o respiro vazio da imagem */
 }
 
-/* Cola o parágrafo logo abaixo */
-.site-footer .footer-intro {
+/* Texto logo abaixo da logo */
+.footer-intro {
+    max-width: 270px;
+    color: var(--footer-muted);
+    line-height: 1.5;
     margin-top: 0 !important;
-    padding-top: 0 !important;
+    /* cola o texto na logo */
+    margin-bottom: 14px;
+}
+
+.footer-intro {
+    max-width: 270px;
+    color: var(--footer-muted);
+    line-height: 1.6;
+    margin: 0 0 18px;
 }
 
 .site-footer address {

@@ -123,6 +123,15 @@ header.scrolled {
     box-shadow: none;
 }
 
+.logo1 {
+  display: block;
+  width: auto;
+  max-width: 140px; /* ajuste o tamanho visual desejado no footer */
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 1rem; /* espaçamento para o texto abaixo */
+}
+
 .header-logo {
     display: block;
     width: 130px;

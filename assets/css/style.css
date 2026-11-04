@@ -1207,22 +1207,18 @@ main {
 /* Container do link no footer */
 .site-footer .footer-brand {
     display: inline-block;
-    margin-bottom: 16px;
-    width: auto;
-    height: auto;
+    margin-bottom: 20px;
 }
 
-/* Logo do rodapé proporcional e nítida */
 .site-footer .footer-brand .site-logo {
     display: block;
     width: auto;
-    max-width: 170px;
-    /* largura equilibrada com a coluna */
+    max-width: 180px;
     height: auto;
-    max-height: 110px;
-    /* altura limite sem esticar nem deformar */
+    max-height: 95px;
     object-fit: contain;
-    object-position: left center;
+    filter: drop-shadow(0px 1px 2px rgba(255, 255, 255, 0.25));
+    /* Contorno suave para separar do fundo */
 }
 
 .footer-intro {

@@ -1204,14 +1204,24 @@ main {
     align-items: start;
 }
 
+/* Container do link no footer */
 .site-footer .footer-brand {
     display: inline-block;
     margin-bottom: 16px;
+    width: auto;
+    height: auto;
 }
 
+/* Logo do rodapé proporcional e nítida */
 .site-footer .footer-brand .site-logo {
-    width: 235px;
-    height: 100px;
+    display: block;
+    width: auto;
+    max-width: 170px;
+    /* largura equilibrada com a coluna */
+    height: auto;
+    max-height: 110px;
+    /* altura limite sem esticar nem deformar */
+    object-fit: contain;
     object-position: left center;
 }
 
@@ -1543,25 +1553,6 @@ main {
             white-space: normal;
         }
     }
-
-    /* Correção do container e da imagem da marca no footer */
-    .footer-brand {
-        display: block !important;
-        width: fit-content !important;
-        height: auto !important;
-        margin-bottom: 1.5rem !important;
-    }
-
-    .footer-brand .site-logo {
-        display: block !important;
-        width: auto !important;
-        max-width: 190px !important;
-        height: auto !important;
-        max-height: 85px !important;
-        object-fit: contain !important;
-        object-position: left center !important;
-    }
-
 
     .help-donate-grid,
     .help-volunteer-form,

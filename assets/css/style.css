@@ -124,12 +124,10 @@ header.scrolled {
 }
 
 .logo1 {
+  max-width: 220px; /* ou a largura desejada */
+  width: 100%;
+  height: auto;     /* impede que a imagem achate verticalmente */
   display: block;
-  width: auto;
-  max-width: 140px; /* ajuste o tamanho visual desejado no footer */
-  height: auto;
-  object-fit: contain;
-  margin-bottom: 1rem; /* espaçamento para o texto abaixo */
 }
 
 .header-logo {

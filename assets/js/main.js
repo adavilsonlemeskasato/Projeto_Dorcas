@@ -6,7 +6,7 @@ const activities = [
     "25/12/2026",
     "O Natal na Dorcas é um momento de celebrar a esperança e proporcionar às crianças uma experiência cheia de carinho.",
     "A ação reuniu famílias, voluntários e parceiros em uma programação especial, com atividades, momentos de alegria e surpresas preparadas para as crianças. A celebração buscou transformar o Natal em uma lembrança afetiva, mostrando que pequenos gestos podem levar alegria e esperança a quem mais precisa.",
-    ["../assets/images/Natal.jpeg"],
+    ["../assets/images/atividade/Natal.jpeg"],
   ],
   [
     "Páscoa: Entrega de Cestas e Ovos de Páscoa",
@@ -14,7 +14,7 @@ const activities = [
     "12/04/2026",
     "A Páscoa foi celebrada com as crianças em um momento de aprendizado, partilha e alegria.",
     "A programação trouxe atividades relacionadas à data e uma mensagem sobre seu significado, aproximando as crianças dos valores de amor, esperança e renovação. Ao final, a celebração foi marcada pela partilha de alimentos e lembranças, tornando o encontro ainda mais especial.",
-    ["../assets/images/Pascoa.jpeg"],
+    ["../assets/images/atividade/Pascoa.jpeg"],
   ],
   [
     "🎉 Festa do Dia das Crianças",

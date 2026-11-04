@@ -1212,14 +1212,11 @@ main {
 
 .site-footer .footer-brand .site-logo {
     display: block;
-    width: auto;
-    max-width: 260px;
-    /* Aumente aqui: ex. 240px, 260px ou 280px */
-    height: auto;
-    max-height: 140px;
-    /* Aumente aqui proporcionalmente */
+    width: 130px;
+    height: 64px;
     object-fit: contain;
-    object-position: left center;
+    object-position: center;
+    background: transparent;
 }
 
 .footer-intro {

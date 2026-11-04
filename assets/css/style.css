@@ -124,12 +124,12 @@ header.scrolled {
 }
 
 .logo1 {
-    max-width: 220px;
-    /* ou a largura desejada */
-    width: 100%;
-    height: auto;
-    /* impede que a imagem achate verticalmente */
     display: block;
+    width: 130px;
+    height: 64px;
+    object-fit: contain;
+    object-position: center;
+    background: transparent;
 }
 
 .header-logo {

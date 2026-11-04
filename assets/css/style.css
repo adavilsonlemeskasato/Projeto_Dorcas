@@ -1205,19 +1205,36 @@ main {
 }
 
 /* Container do link no footer */
+/* Container da logo no rodapé */
 .site-footer .footer-brand {
-    display: inline-block;
-    margin-bottom: 20px;
+    display: block;
+    margin-bottom: 0 !important;
+    /* remove o espaço inferior do link */
+    line-height: 1;
 }
 
+/* Imagem da logo */
 .site-footer .footer-brand .site-logo {
     display: block;
-    width: 250px;
-    /* Escolha o tamanho exato desejado */
+    width: 210px;
+    /* tamanho equilibrado */
+    max-width: 100%;
     height: auto;
-    /* O navegador calcula a altura sozinho, sem achatar */
     object-fit: contain;
-    object-position: left center;
+    object-position: left bottom;
+    /* alinha a arte junto à borda inferior */
+    margin: 0 0 -22px 0 !important;
+    /* margem negativa para compensar o respiro vazio da imagem */
+}
+
+/* Texto logo abaixo da logo */
+.footer-intro {
+    max-width: 270px;
+    color: var(--footer-muted);
+    line-height: 1.5;
+    margin-top: 0 !important;
+    /* cola o texto na logo */
+    margin-bottom: 14px;
 }
 
 .footer-intro {

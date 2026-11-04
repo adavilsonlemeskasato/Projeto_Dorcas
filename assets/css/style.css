@@ -1544,22 +1544,22 @@ main {
         }
     }
 
-    /* Correção da logo do footer */
+    /* Correção do container e da imagem da marca no footer */
     .footer-brand {
-        display: inline-block;
-        width: auto;
-        height: auto;
+        display: block !important;
+        width: fit-content !important;
+        height: auto !important;
+        margin-bottom: 1.5rem !important;
     }
 
-    .site-logo,
-    .footer-brand img {
-        width: auto !important;
-        max-width: 180px !important;
-        height: auto !important;
-        max-height: 120px !important;
-        object-fit: contain !important;
+    .footer-brand .site-logo {
         display: block !important;
-        margin-bottom: 1.25rem;
+        width: auto !important;
+        max-width: 190px !important;
+        height: auto !important;
+        max-height: 85px !important;
+        object-fit: contain !important;
+        object-position: left center !important;
     }
 
 

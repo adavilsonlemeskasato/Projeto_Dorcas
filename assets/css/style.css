@@ -124,10 +124,12 @@ header.scrolled {
 }
 
 .logo1 {
-  max-width: 220px; /* ou a largura desejada */
-  width: 100%;
-  height: auto;     /* impede que a imagem achate verticalmente */
-  display: block;
+    max-width: 220px;
+    /* ou a largura desejada */
+    width: 100%;
+    height: auto;
+    /* impede que a imagem achate verticalmente */
+    display: block;
 }
 
 .header-logo {
@@ -1542,6 +1544,24 @@ main {
         }
     }
 
+    /* Correção da logo do footer */
+    .footer-brand {
+        display: inline-block;
+        width: auto;
+        height: auto;
+    }
+
+    .site-logo,
+    .footer-brand img {
+        width: auto !important;
+        max-width: 180px !important;
+        height: auto !important;
+        max-height: 120px !important;
+        object-fit: contain !important;
+        display: block !important;
+        margin-bottom: 1.25rem;
+    }
+
 
     .help-donate-grid,
     .help-volunteer-form,
@@ -2086,6 +2106,7 @@ header nav .nav-help-button:hover {
     border-color: var(--laranja);
     /* Borda laranja */
 }
+
 /* Transparência: deixa o texto do botão sempre visível */
 #docs-list .doc .btn-outline {
     color: #25633b;

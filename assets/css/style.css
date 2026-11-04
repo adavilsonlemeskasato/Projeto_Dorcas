@@ -1214,11 +1214,12 @@ main {
     display: block;
     width: auto;
     max-width: 260px;
+    /* Aumente aqui: ex. 240px, 260px ou 280px */
     height: auto;
     max-height: 140px;
+    /* Aumente aqui proporcionalmente */
     object-fit: contain;
-    filter: drop-shadow(0px 1px 2px rgba(255, 255, 255, 0.25));
-    /* Contorno suave para separar do fundo */
+    object-position: left center;
 }
 
 .footer-intro {

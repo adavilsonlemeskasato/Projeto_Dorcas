@@ -24,10 +24,10 @@ const activities = [
     "Preparemos uma tarde especial com atividades lúdicas, gincanas, brinquedos infláveis, pintura de rosto, apresentações artísticas e muito mais. O objetivo é proporcionar um dia inesquecível para as crianças da nossa comunidade, valorizando o direito de brincar, se divertir e ser feliz.<br><br>📅 Data: 03 de agosto de 2026<br>⏰ Horário: às 08h<br>📍 Local: [Nome do local/sede da ONG]<br>👶 Público: Crianças de 0 a 12 anos acompanhadas de um responsável<br><br>Contamos com a participação de todas as famílias! Venha celebrar conosco essa data tão especial.",
     // 💡 AS 4 IMAGENS DO CARROSSEL (Certifique-se de que os arquivos na pasta images/ tenham exatamente estes nomes sem espaços):
     [
-      "../assets/images/criancas-01.jpeg",
-      "../assets/images/criancas-02.jpeg",
-      "../assets/images/criancas-03.jpeg",
-      "../assets/images/criancas-04.jpeg",
+      "../assets/images/atividade/criancas-01.jpeg",
+      "../assets/images/atividade/criancas-02.jpeg",
+      "../assets/images/atividade/criancas-03.jpeg",
+      "../assets/images/atividade/criancas-04.jpeg",
     ],
   ],
   [
@@ -36,7 +36,10 @@ const activities = [
     "10/05/2026",
     "O Dia das Mães foi uma oportunidade de reconhecer e homenagear as mulheres que exercem um papel importante na vida de suas famílias. ",
     "A ação foi preparada com momentos de carinho e valorização, proporcionando às mães uma experiência dedicada especialmente a elas. Mais do que uma comemoração, o encontro representou uma forma de agradecer por todo cuidado, dedicação e amor presentes no cotidiano das famílias.",
-    ["../assets/images/maes-01.jpeg", "../assets/images/maes-02.jpeg"],
+    [
+      "../assets/images/atividade/maes-01.jpeg",
+      "../assets/images/atividade/maes-02.jpeg",
+    ],
   ],
   [
     "Dia dos Pais: Celebração e Homenagem",
@@ -44,7 +47,7 @@ const activities = [
     "08/08/2026",
     "A celebração do Dia dos Pais destacou a importância da presença e dos momentos compartilhados em família.",
     "A programação criou oportunidades para pais e filhos estarem juntos, participando de atividades e aproveitando um momento de descontração. A ação reforçou que o cuidado também está presente nas pequenas experiências vividas em família e no tempo dedicado uns aos outros.",
-    ["../assets/images/pais.jpeg"],
+    ["../assets/images/atividade/pais.jpeg"],
   ],
   [
     "Toque Artesanal: Oficina de Artesanato e Criatividade, Sabão Natural",
@@ -53,9 +56,9 @@ const activities = [
     "Cuidado natural e sustentável, feito por nossa gente e para nossa gente.",
     "A oficina de sabão sem soda do Projeto Dorcas reflete nosso compromisso com o bem-estar, unindo voluntários e famílias em uma produção que gera afeto e protege a nossa comunidade.",
     [
-      "../assets/images/sabaoAtividade01.jpeg",
-      "../assets/images/sabaoAtividade02.jpeg",
-      "../assets/images/sabaoAtividade03.jpeg",
+      "../assets/images/atividade/sabaoAtividade01.jpeg",
+      "../assets/images/atividade/sabaoAtividade02.jpeg",
+      "../assets/images/atividade/sabaoAtividade03.jpeg",
     ],
   ],
 ];
@@ -77,25 +80,25 @@ const team = [
     "Presidente",
     "Odenir Cardoso de Resende",
     "Responsável pela condução institucional e representação da Associação.",
-    "../assets/images/Presidente_Dorcas.jpg",
+    "../assets/images/diretoria/Presidente_Dorcas.jpg",
   ],
   [
     "Vice-Presidente",
     "Irany de Oliveira Freitas",
     "Responsável por auxiliar na gestão e na tomada de decisões estratégicas da Associação.",
-    "../assets/images/Vice_Presidente_Dorcas.jpeg",
+    "../assets/images/diretoria/Vice_Presidente_Dorcas.jpeg",
   ],
   [
     "Secretária",
     "Leny Oliveira",
     "Responsável pelas atividades administrativas e pela organização documental da Associação.",
-    "../assets/images/Secretaria_Dorcas.jpeg",
+    "../assets/images/diretoria/Secretaria_Dorcas.jpeg",
   ],
   [
     "Tesoureiro",
     "Sandoval José Cardoso de Rezende",
     "Responsável pela gestão financeira e contábil da Associação.",
-    "../assets/images/Tesoureiro_Dorcas.jpeg",
+    "../assets/images/diretoria/Tesoureiro_Dorcas.jpeg",
   ],
 ];
 
